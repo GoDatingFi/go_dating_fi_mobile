@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/go_dating_fi_mobile.iml" filepath="$PROJECT_DIR$/.idea/go_dating_fi_mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/go_dating_fi_mobile_android.iml" filepath="$PROJECT_DIR$/android/go_dating_fi_mobile_android.iml" />
     </modules>
   </component>
 </project>
