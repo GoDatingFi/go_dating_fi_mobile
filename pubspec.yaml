@@ -53,6 +53,13 @@ dependencies:
   #logger
   logger: ^1.1.0
 
+  #bluetooh nearby
+  flutter_nearby_connections: ^1.1.1
+
+  #device info
+  device_info: ^2.0.0
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
