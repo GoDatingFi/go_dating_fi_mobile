@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/home/home_screen.dart';
+import '../screens/pair/devices_list_screen.dart';
 import '../screens/splash/splash_screen.dart';
 import '404.dart';
 
@@ -11,6 +12,8 @@ class RouterGenerator {
   static const routeQRCode = "/Qrcode";
   static const routeLogin = "/Login";
   static const routeRegister = "/Register";
+  static const routeBrowser = "/RouterBrowser";
+  static const routeAdvertiser = "/RouterAdvertiser";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -23,9 +26,19 @@ class RouterGenerator {
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case routeLogin:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
+      case routeBrowser:
+        return MaterialPageRoute(
+            builder: (_) =>
+                const DevicesListScreen(deviceType: DeviceType.browser));
+      case routeAdvertiser:
+        return MaterialPageRoute(
+            builder: (_) =>
+                const DevicesListScreen(deviceType: DeviceType.advertiser));
       default:
         break;
     }
     return MaterialPageRoute(builder: (_) => WidgetNotFound());
   }
 }
+
+enum DeviceType { advertiser, browser }
