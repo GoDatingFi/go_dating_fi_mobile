@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_dating_fi_mobile/ui/screens/swipe/swipe_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/pair/devices_list_screen.dart';
@@ -14,6 +15,7 @@ class RouterGenerator {
   static const routeRegister = "/Register";
   static const routeBrowser = "/RouterBrowser";
   static const routeAdvertiser = "/RouterAdvertiser";
+  static const routeSwipeCard = "/RouteSwipeScreen";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -34,6 +36,8 @@ class RouterGenerator {
         return MaterialPageRoute(
             builder: (_) =>
                 const DevicesListScreen(deviceType: DeviceType.advertiser));
+      case routeSwipeCard:
+        return MaterialPageRoute(builder: (_) => const SwipeScreen());
       default:
         break;
     }
