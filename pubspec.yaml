@@ -62,6 +62,12 @@ dependencies:
   #web3
   web3dart: ^2.3.5
 
+  #flutter screen
+  flutter_screenutil: ^5.5.3+2
+
+  story_view:
+    path: ../go_dating_fi_mobile/library/story_view
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
