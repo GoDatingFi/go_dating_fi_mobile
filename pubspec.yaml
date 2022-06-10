@@ -69,6 +69,9 @@ dependencies:
   firebase_messaging: ^11.2.14
   firebase_core: ^1.15.0
 
+  #socket io
+  socket_io_client: ^1.0.2
+
   story_view:
     path: ../go_dating_fi_mobile/library/story_view
 
