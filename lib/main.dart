@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
               fontFamily: "Mulish",
               scaffoldBackgroundColor: Colors.white,
             ),
-            initialRoute: RouterGenerator.routeSwipeCard,
+            initialRoute: RouterGenerator.routeSocketScreen,
             onGenerateRoute: RouterGenerator.generateRoute));
   }
 }
