@@ -22,7 +22,7 @@ class _SocketScreenState extends State<SocketScreen> {
     });
     _socket.on('event', (data) => Logger().d(data));
     _socket.onDisconnect((_) => Logger().d("disconnect"));
-    _socket.on('fromServer', (_) => Logger().d(_));
+    _socket.on('msgToClient', (_) => Logger().d("Longkaka"));
     super.initState();
   }
 
