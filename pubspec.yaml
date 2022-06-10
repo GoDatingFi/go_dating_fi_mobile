@@ -65,6 +65,10 @@ dependencies:
   #flutter screen
   flutter_screenutil: ^5.5.3+2
 
+  #fcm
+  firebase_messaging: ^11.2.14
+  firebase_core: ^1.15.0
+
   story_view:
     path: ../go_dating_fi_mobile/library/story_view
 
