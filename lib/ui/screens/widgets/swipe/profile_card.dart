@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:story_view/story_view.dart';
 
 import '../../../../core/model/profile_model.dart';
 
 
 class ProfileCard extends StatelessWidget {
-  ProfileCard({Key? key, required this.profile }) : super(key: key);
+  const ProfileCard({Key? key, required this.profile}) : super(key: key);
   final Profile profile;
-  final StoryController controller = StoryController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,33 +18,9 @@ class ProfileCard extends StatelessWidget {
           Positioned.fill(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Container(
-                child: StoryView(
-                  controller: controller,
-                  storyItems: [
-                    StoryItem.inlineImage(
-                      url:
-                      profile.imageAsset1,
-                      controller: controller,
-                      imageFit: BoxFit.fitHeight,
-                    ),
-                    StoryItem.inlineImage(
-                      url:
-                      profile.imageAsset2,
-                      controller: controller,
-                      imageFit: BoxFit.fitHeight,
-                    )
-                  ],
-                  onStoryShow: (s) {
-                    print("Showing a story");
-                  },
-                  onComplete: () {
-                    print("Completed a cycle");
-                  },
-                  progressPosition: ProgressPosition.top,
-                  repeat: false,
-                  inline: false,
-                ),
+              child: Image.network(
+                profile.imageAsset1,
+                fit: BoxFit.fitHeight,
               ),
             ),
           ),

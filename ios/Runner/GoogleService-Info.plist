@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>12158573456-3k83kq15uhes4mrgafejvkbtflduqkhf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.12158573456-3k83kq15uhes4mrgafejvkbtflduqkhf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD3AvvHrfQQrwBHLQnXOziAS8gIT71N7-c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>12158573456</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.godatingfi.mobile</string>
+	<key>PROJECT_ID</key>
+	<string>godatingfi-5e8ef</string>
+	<key>STORAGE_BUCKET</key>
+	<string>godatingfi-5e8ef.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:12158573456:ios:19242039a3461812f83115</string>
+</dict>
+</plist>

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/model/profile_model.dart';
 import '../../../../main.dart';
@@ -164,7 +165,7 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 2000),
       vsync: this,
     );
     _animationController.addStatusListener((status) {
@@ -291,7 +292,7 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
                 child: Container(
                   height: 700.0,
                   width: 80.0,
-                  color: Colors.transparent,
+                  color: Colors.red,
                 ),
               );
             },
@@ -314,7 +315,7 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
                 child: Container(
                   height: 700.0,
                   width: 80.0,
-                  color: Colors.transparent,
+                  color: Colors.blue,
                 ),
               );
             },
