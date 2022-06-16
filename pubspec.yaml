@@ -75,6 +75,9 @@ dependencies:
   #location
   location: ^4.4.0
 
+  #auth local
+  local_auth: ^2.1.0
+
   story_view:
     path: ../go_dating_fi_mobile/library/story_view
 

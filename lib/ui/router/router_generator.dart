@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/socket_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/swipe/swipe_screen.dart';
+import 'package:local_auth/local_auth.dart';
+import '../screens/auth/auth_local_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/pair/devices_list_screen.dart';
@@ -17,6 +19,7 @@ class RouterGenerator {
   static const routeBrowser = "/RouterBrowser";
   static const routeAdvertiser = "/RouterAdvertiser";
   static const routeSwipeCard = "/RouteSwipeScreen";
+  static const routeAuthLocal = "/AuthLocalScreen";
 
   static const routeSocketScreen = "/RouteSocketScreen";
 
@@ -43,6 +46,9 @@ class RouterGenerator {
         return MaterialPageRoute(builder: (_) => const SwipeScreen());
       case routeSocketScreen:
         return MaterialPageRoute(builder: (_) => const SocketScreen());
+      case routeAuthLocal:
+        return MaterialPageRoute(builder: (_) => const AuthLocalScreen());
+
       default:
         break;
     }

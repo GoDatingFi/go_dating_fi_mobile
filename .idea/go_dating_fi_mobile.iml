@@ -63,6 +63,12 @@
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/device_info/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/device_info/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/device_info/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location/example/.pub" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
