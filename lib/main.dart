@@ -33,10 +33,9 @@ class MyApp extends StatelessWidget {
               fontFamily: "Mulish",
               scaffoldBackgroundColor: Colors.white,
             ),
-            initialRoute: RouterGenerator.routeHome,
+            initialRoute: RouterGenerator.routeAuthLocal,
             onGenerateRoute: RouterGenerator.generateRoute));
   }
 }
 
 enum Swipe { left, right, none }
-
