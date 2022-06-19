@@ -78,6 +78,9 @@ dependencies:
   #auth local
   local_auth: ^2.1.0
 
+  #font
+  google_fonts: ^3.0.1
+
   story_view:
     path: ../go_dating_fi_mobile/library/story_view
 
@@ -114,6 +117,8 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/abi/
+    - assets/logo/
+    - assets/images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

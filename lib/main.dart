@@ -18,23 +18,25 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context);
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (context) => LanguageProvider()),
         ],
-        child: MaterialApp(
-            title: "GoDatingFi",
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              fontFamily: "Mulish",
-              scaffoldBackgroundColor: Colors.white,
-            ),
-            initialRoute: RouterGenerator.routeWalletScreen,
-            onGenerateRoute: RouterGenerator.generateRoute));
+        child: ScreenUtilInit(
+            designSize: const Size(360, 690),
+            minTextAdapt: true,
+            splitScreenMode: true,
+            builder: (context, child) => MaterialApp(
+                title: "GoDatingFi",
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData(
+                  fontFamily: "Mulish",
+                  scaffoldBackgroundColor: Colors.white,
+                ),
+                initialRoute: RouterGenerator.routeChatScreen,
+                onGenerateRoute: RouterGenerator.generateRoute)));
   }
 }
 
