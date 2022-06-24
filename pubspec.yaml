@@ -81,6 +81,9 @@ dependencies:
   #font
   google_fonts: ^3.0.1
 
+  #navigation
+  dot_navigation_bar: ^1.0.1+3
+
   story_view:
     path: ../go_dating_fi_mobile/library/story_view
   assets_media:
@@ -122,6 +125,7 @@ flutter:
     - assets/abi/
     - assets/logo/
     - assets/images/
+    - assets/icon/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
@@ -134,10 +138,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Nunito
+    - family: Sen
       fonts:
-        - asset: assets/fonts/Nunito-Regular.ttf
-        - asset: assets/fonts/Nunito-ExtraBold.ttf
+        - asset: assets/fonts/Sen-Regular.ttf
+        - asset: assets/fonts/Sen-Bold.ttf
           style: italic
   # fonts:
   #   - family: Schyler

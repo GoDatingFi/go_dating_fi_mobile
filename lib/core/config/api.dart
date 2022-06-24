@@ -3,8 +3,11 @@ class Api {
   static Api instance = Api();
 
   //* Base API URL
-  static const baseURL = "https://lifestory.dpotech.vn";
+  static const baseURL = "https://api.godatingfi.com/v1";
 
-  String getLanguageCollection =
-      "$baseURL/msa-localization/odata/Languages?\$filter=isdeleted eq false";
+  String login =
+      "$baseURL/auth/login";
+
+  String listImage =
+      "$baseURL/auth/login";
 }

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/assets_utils.dart';
 
 import '../../router/fluro_navigator.dart';
@@ -26,8 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         });
       } else {
         _timer.cancel();
-        NavigatorUtils.pushReplacementNamed(
-            context, RouterGenerator.routeChatScreen);
+        NavigatorUtils.pushReplacementNamed(context, RouterGenerator.routeHome);
       }
     });
   }
@@ -42,8 +42,8 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 250,
-        height: 250,
+        width: 0.2.sw,
+        height: 0.2.sw,
         child: Image.asset(
           AssetsUtils.LOGO,
           fit: BoxFit.cover,
