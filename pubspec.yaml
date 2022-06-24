@@ -83,8 +83,8 @@ dependencies:
 
   story_view:
     path: ../go_dating_fi_mobile/library/story_view
-#  assets_media:
-#    path: ../go_dating_fi_mobile/library/assets_media
+  assets_media:
+    path: ../go_dating_fi_mobile/library/assets_media
   flutter_localizations:
     sdk: flutter
 dev_dependencies:
