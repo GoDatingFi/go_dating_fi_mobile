@@ -75,6 +75,9 @@
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/local_auth_ios/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/local_auth_ios/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/local_auth_ios/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/library/assets_media/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/library/assets_media/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/library/assets_media/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
