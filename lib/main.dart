@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
             minTextAdapt: true,
             splitScreenMode: true,
             builder: (context, child) => MaterialApp(
-                title: Languages.of(context)!.appName,
+                title: "GoDatingFi",
                 debugShowCheckedModeBanner: false,
                 locale: _locale,
                 theme: ThemeData(
