@@ -18,7 +18,7 @@ class RecentChats extends StatelessWidget {
           padding: const EdgeInsets.only(top: 30),
           child: Row(
             children: [
-              Text(
+              const Text(
                 'Recent Chats',
                 style: MyTheme.heading2,
               ),
@@ -32,7 +32,7 @@ class RecentChats extends StatelessWidget {
         ),
         ListView.builder(
             shrinkWrap: true,
-            physics: ScrollPhysics(),
+            physics: const ScrollPhysics(),
             itemCount: recentChats.length,
             itemBuilder: (context, int index) {
               final recentChat = recentChats[index];

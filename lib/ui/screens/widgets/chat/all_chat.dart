@@ -15,7 +15,7 @@ class AllChats extends StatelessWidget {
         Container(
           padding: const EdgeInsets.only(top: 10),
           child: Row(
-            children: [
+            children: const [
               Text(
                 'All Chats',
                 style: MyTheme.heading2,
@@ -64,7 +64,7 @@ class AllChats extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [

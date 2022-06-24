@@ -3,7 +3,6 @@ import 'package:go_dating_fi_mobile/ui/screens/chat/chat_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/socket_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/swipe/swipe_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/wallet/wallet_screen.dart';
-import 'package:local_auth/local_auth.dart';
 import '../screens/auth/auth_local_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/home/home_screen.dart';
