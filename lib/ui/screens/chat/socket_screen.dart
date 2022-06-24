@@ -30,7 +30,7 @@ class _SocketScreenState extends State<SocketScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("LOngkaka"),
+        title: const Text("LOngkaka"),
       ),
       body: Container(),
     );

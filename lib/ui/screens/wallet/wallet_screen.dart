@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
@@ -25,14 +24,14 @@ class _WalletScreenState extends State<WalletScreen> {
     var rng = Random.secure();
     EthPrivateKey priKey = EthPrivateKey.createRandom(rng);
     String s = bytesToHex(priKey.privateKey);
-    Logger().d("$s");
+    Logger().d(s);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Wallet"),
+        title: const Text("Wallet"),
       ),
       body: Container(),
     );

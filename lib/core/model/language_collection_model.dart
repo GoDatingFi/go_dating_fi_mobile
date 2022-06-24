@@ -15,10 +15,10 @@ class LanguageCollectionModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['@odata.context'] = this.odataContext;
-    if (this.value != null) {
-      data['value'] = this.value!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['@odata.context'] = odataContext;
+    if (value != null) {
+      data['value'] = value!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -68,19 +68,19 @@ class LanguageValue {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['Id'] = this.id;
-    data['Code'] = this.code;
-    data['Name'] = this.name;
-    data['Enable'] = this.enable;
-    data['Icon'] = this.icon;
-    data['CreatedTime'] = this.createdTime;
-    data['CreatedBy'] = this.createdBy;
-    data['ModifiedTime'] = this.modifiedTime;
-    data['ModifiedBy'] = this.modifiedBy;
-    data['IsDeleted'] = this.isDeleted;
-    data['DeletedBy'] = this.deletedBy;
-    data['DeletedTime'] = this.deletedTime;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['Id'] = id;
+    data['Code'] = code;
+    data['Name'] = name;
+    data['Enable'] = enable;
+    data['Icon'] = icon;
+    data['CreatedTime'] = createdTime;
+    data['CreatedBy'] = createdBy;
+    data['ModifiedTime'] = modifiedTime;
+    data['ModifiedBy'] = modifiedBy;
+    data['IsDeleted'] = isDeleted;
+    data['DeletedBy'] = deletedBy;
+    data['DeletedTime'] = deletedTime;
     return data;
   }
 }

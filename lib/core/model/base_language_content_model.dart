@@ -9,16 +9,16 @@ class BaseLanguageContentModel {
     if (json['value'] != null) {
       value = <Value>[];
       json['value'].forEach((v) {
-        value!.add(new Value.fromJson(v));
+        value!.add(Value.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['@odata.context'] = this.odataContext;
-    if (this.value != null) {
-      data['value'] = this.value!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['@odata.context'] = odataContext;
+    if (value != null) {
+      data['value'] = value!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -38,10 +38,10 @@ class Value {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['Context'] = this.context;
-    data['Key'] = this.key;
-    data['Value'] = this.value;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['Context'] = context;
+    data['Key'] = key;
+    data['Value'] = value;
     return data;
   }
 }

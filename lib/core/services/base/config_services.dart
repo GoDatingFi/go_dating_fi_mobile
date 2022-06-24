@@ -1,10 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:logger/logger.dart';
 
 class ConfigServices {
   static Options getHeaders(
       {String token = "", String profileId = "", String primaryId = ""}) {
-    var _headers = Map<String, dynamic>();
+    var _headers = <String, dynamic>{};
     _headers['Accept'] = "application/json";
     if (token != '') {
       _headers['Authorization'] = "Bearer " + token;
