@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_dating_fi_mobile/core/viewmodels/auth_provider.dart';
 import 'package:provider/provider.dart';
-
-import '../../../core/viewmodels/language_provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -14,15 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Builder(builder: (context) {
-      return Consumer<LanguageProvider>(
-          builder: (context, languageCollection, _) {
-        if (languageCollection.baseLanguageContentModel == null ||
-            languageCollection.baseLanguageContentModel!.value == null) {
-          languageCollection.getLanguageCollection(context);
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        }
+      return Consumer<AuthProvider>(builder: (context, auth, _) {
         return Container();
       });
     }));

@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_dating_fi_mobile/core/services/auth/auth_services.dart';
+import 'package:go_dating_fi_mobile/core/services/dating/dating_services.dart';
+import 'package:go_dating_fi_mobile/core/viewmodels/auth_provider.dart';
+import 'package:go_dating_fi_mobile/core/viewmodels/dating_provider.dart';
 import 'package:provider/provider.dart';
 
-import 'core/viewmodels/language_provider.dart';
 import 'injector.dart';
 import 'ui/router/router_generator.dart';
 import 'ui/screens/widgets/language/locale_constant.dart';
@@ -53,7 +56,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (context) => LanguageProvider()),
+          ChangeNotifierProvider(create: (context) => AuthProvider()),
+          ChangeNotifierProvider(create: (context) => DatingProvider()),
         ],
         child: ScreenUtilInit(
             designSize: const Size(360, 690),
@@ -64,10 +68,10 @@ class _MyAppState extends State<MyApp> {
                 debugShowCheckedModeBanner: false,
                 locale: _locale,
                 theme: ThemeData(
-                  fontFamily: "Mulish",
+                  fontFamily: "Sen",
                   scaffoldBackgroundColor: Colors.white,
                 ),
-                initialRoute: RouterGenerator.routeChatScreen,
+                initialRoute: RouterGenerator.routeSplash,
                 supportedLocales: const [
                   Locale('en', ''),
                   Locale('vn', ''),

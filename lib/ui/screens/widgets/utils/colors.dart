@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Colours {
   static const Color TEXT = Color(0xFF25396F);
 
-  static const Color MAIN_COLOR = Color(0xFF58B9FF);
+  static const Color MAIN_COLOR = Color(0xFF7B47E1);
 
   static const Color UN_SELECTED = Color(0xFF838B9F);
 
@@ -34,4 +34,6 @@ class Colours {
   static const Color BORDER_COMMENT = Color(0xFFEDF0F5);
 
   static const Color LABEL_COMMENT = Color(0xFFF5F7FA);
+
+  static const Color SHADOWN = Color(0x1A7A5CB4);
 }
