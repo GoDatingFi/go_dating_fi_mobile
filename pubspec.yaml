@@ -90,6 +90,12 @@ dependencies:
   #keyboard
   flutter_keyboard_visibility: ^5.3.0
 
+  #wallet connect
+  walletconnect_dart: ^0.0.11
+
+  #launch url
+  url_launcher: ^6.1.4
+
   story_view:
     path: ../go_dating_fi_mobile/library/story_view
   assets_media:

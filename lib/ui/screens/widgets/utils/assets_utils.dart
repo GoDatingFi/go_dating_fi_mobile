@@ -16,4 +16,19 @@ class AssetsUtils {
   static const PASSWORD_ICON = "assets/icon/lock.svg";
 
   static const LOGO_TRANSPARENT = "assets/icon/logo.png";
+
+  static const IMAGES_WELLCOME = "assets/images/image_wellcome.png";
+
+  static const ARIES_ICON = "assets/icon/aries.svg";
+  static const TAURUS_ICON = "assets/icon/taurus.svg";
+  static const GEMINI_ICON = "assets/icon/gemini.svg";
+  static const CANCER_ICON = "assets/icon/cancer.svg";
+  static const LEO_ICON = "assets/icon/leo.svg";
+  static const VIRGO_ICON = "assets/icon/virgo.svg";
+  static const LIBRA_ICON = "assets/icon/libra.svg";
+  static const SCORPIO_ICON = "assets/icon/scorpio.svg";
+  static const SAGITTARIUS_ICON = "assets/icon/sagittarius.svg";
+  static const CAPRICORNUS_ICON = "assets/icon/capricornus.svg";
+  static const AQUARIUS_ICON = "assets/icon/aquarius.svg";
+  static const PISCES = "assets/icon/pisces.svg";
 }
