@@ -28,4 +28,36 @@ abstract class Languages {
   String get newMember;
 
   String get register;
+
+  String get hi;
+
+  String get titleWelcome;
+
+  String get titleSelectZodiac;
+
+  String get textAries;
+
+  String get textTaurus;
+
+  String get textGemini;
+
+  String get textCancer;
+
+  String get textLeo;
+
+  String get textVirgo;
+
+  String get textLibra;
+
+  String get textScorpio;
+
+  String get textSagittarius;
+
+  String get textCapricorus;
+
+  String get textAquarius;
+
+  String get textPisces;
+
+  String get textContinue;
 }

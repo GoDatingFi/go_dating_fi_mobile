@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,7 +8,9 @@ import 'package:go_dating_fi_mobile/core/viewmodels/auth_provider.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/language/languages.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/common.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/text_style.dart';
+import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
+import 'package:walletconnect_dart/walletconnect_dart.dart';
 
 import '../../router/fluro_navigator.dart';
 import '../../router/router_generator.dart';
@@ -41,23 +44,40 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 100.sm),
-                    width: 0.1.sw,
-                    height: 0.1.sw,
+                    color: Colors.transparent,
+                    margin: EdgeInsets.only(top: 50.sm),
+                    width: 250.w,
+                    height: 200.w,
                     child: Image.asset(
-                      AssetsUtils.LOGO_TRANSPARENT,
-                      fit: BoxFit.cover,
-                      height: double.infinity,
-                      width: double.infinity,
+                      AssetsUtils.IMAGES_WELLCOME,
+                      fit: BoxFit.fill,
                       alignment: Alignment.center,
                     ),
                   ),
-                  Text(
-                    Languages.of(context)!.appName,
-                    style: TextStyles.textSize34MainColor,
+                  Container(
+                    margin: EdgeInsets.only(left: 16.sm),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        Languages.of(context)!.hi,
+                        style: TextStyles.textSize34MainColor,
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 16.sm),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        Languages.of(context)!.titleWelcome,
+                        style: TextStyles.textBold14R,
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
                   ),
                   SizedBox(
-                    height: 100.sm,
+                    height: 20.sm,
                   ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 16.sm),
@@ -102,10 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Common().buttonCommon(
                         strTitle: Languages.of(context)!.login,
                         dHeight: 32.h,
-                        onClick: () {
-                          NavigatorUtils.pushReplacementNamed(
-                              context, RouterGenerator.routeHome);
-                        }),
+                        onClick: () {}),
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 50.sm),
