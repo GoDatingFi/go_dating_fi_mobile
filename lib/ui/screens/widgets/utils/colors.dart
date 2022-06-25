@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Colours {
-  static const Color TEXT = Color(0xFF25396F);
+  static const Color TEXT = Color(0xFF292938);
 
   static const Color MAIN_COLOR = Color(0xFF7B47E1);
 
@@ -11,7 +11,7 @@ class Colours {
 
   static const Color BG_IMAGE = Color(0xFF1C1A34);
 
-  static const Color TEXT_NAME = Color(0xFF25396F);
+  static const Color TEXT_NAME = Color(0xFF5E5E70);
 
   static const Color TEXT_SHADOWN_70 = Color(0x8025396F);
 
@@ -36,4 +36,9 @@ class Colours {
   static const Color LABEL_COMMENT = Color(0xFFF5F7FA);
 
   static const Color SHADOWN = Color(0x1A7A5CB4);
+
+  static const Color READ_TEXT = Color(0xFF9595A9);
+
+  static const Color TIME_COLOR = Color(0xFFC6C6D7);
+
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:logger/logger.dart';
 
 import '../../../../core/model/profile_model.dart';
@@ -38,13 +39,11 @@ class _DragWidgetState extends State<DragWidget> with TickerProviderStateMixin {
             child: ValueListenableBuilder(
               valueListenable: widget.swipeNotifier,
               builder: (context, swipe, _) {
-                Logger().d("Longkaka");
-
                 return RotationTransition(
                   turns: widget.swipeNotifier.value != Swipe.none
                       ? widget.swipeNotifier.value == Swipe.left
-                          ? const AlwaysStoppedAnimation(-2 / 360)
-                          : const AlwaysStoppedAnimation(2 / 360)
+                          ? AlwaysStoppedAnimation(-2.sm / 360.sm)
+                          : AlwaysStoppedAnimation(2.sm / 360.sm)
                       : const AlwaysStoppedAnimation(0),
                   child: Stack(
                     children: [
@@ -52,10 +51,10 @@ class _DragWidgetState extends State<DragWidget> with TickerProviderStateMixin {
                       widget.swipeNotifier.value != Swipe.none
                           ? widget.swipeNotifier.value == Swipe.right
                               ? Positioned(
-                                  top: 40,
-                                  left: 20,
+                                  top: 40.sm,
+                                  left: 20.sm,
                                   child: Transform.rotate(
-                                    angle: 12,
+                                    angle: 12.sm,
                                     child: TagWidget(
                                       text: 'LIKE',
                                       color: Colors.green[400]!,
@@ -63,10 +62,10 @@ class _DragWidgetState extends State<DragWidget> with TickerProviderStateMixin {
                                   ),
                                 )
                               : Positioned(
-                                  top: 50,
-                                  right: 24,
+                                  top: 50.sm,
+                                  right: 24.sm,
                                   child: Transform.rotate(
-                                    angle: -12,
+                                    angle: -12.sm,
                                     child: TagWidget(
                                       text: 'DISLIKE',
                                       color: Colors.red[400]!,
@@ -81,7 +80,6 @@ class _DragWidgetState extends State<DragWidget> with TickerProviderStateMixin {
             ),
           ),
           onDragUpdate: (DragUpdateDetails dragUpdateDetails) {
-            Logger().d("Longkaka");
             if (dragUpdateDetails.delta.dx > 0 &&
                 dragUpdateDetails.globalPosition.dx >
                     MediaQuery.of(context).size.width / 2) {
@@ -94,7 +92,6 @@ class _DragWidgetState extends State<DragWidget> with TickerProviderStateMixin {
             }
           },
           onDragEnd: (drag) {
-            Logger().d("Longkaka");
             widget.swipeNotifier.value = Swipe.none;
           },
 
@@ -113,10 +110,10 @@ class _DragWidgetState extends State<DragWidget> with TickerProviderStateMixin {
                     swipe != Swipe.none && widget.isLastCard
                         ? swipe == Swipe.right
                             ? Positioned(
-                                top: 40,
-                                left: 20,
+                                top: 40.sm,
+                                left: 20.sm,
                                 child: Transform.rotate(
-                                  angle: 12,
+                                  angle: 12.sm,
                                   child: TagWidget(
                                     text: 'LIKE',
                                     color: Colors.green[400]!,
@@ -124,10 +121,10 @@ class _DragWidgetState extends State<DragWidget> with TickerProviderStateMixin {
                                 ),
                               )
                             : Positioned(
-                                top: 50,
-                                right: 24,
+                                top: 50.sm,
+                                right: 24.sm,
                                 child: Transform.rotate(
-                                  angle: -12,
+                                  angle: -12.sm,
                                   child: TagWidget(
                                     text: 'DISLIKE',
                                     color: Colors.red[400]!,
