@@ -4,169 +4,154 @@ import 'colors.dart';
 import 'dimens.dart';
 
 class TextStyles {
-  static const TextStyle textSize12 = TextStyle(
+  static TextStyle textSize12 = TextStyle(
       fontSize: Dimens.font_sp12,
       color: Colours.TEXT,
       fontFamily: "Sen",
       fontWeight: FontWeight.w400,
-      decoration: TextDecoration.none
+      decoration: TextDecoration.none);
+
+  static TextStyle textSize12r = TextStyle(
+    fontSize: Dimens.font_sp12,
+    color: Colours.TIME_COLOR,
+    fontFamily: "SenRegular",
+    fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle textSize12_600 = TextStyle(
-      fontSize: Dimens.font_sp12,
-      color: Colours.TEXT,
-      fontFamily: "Sen",
-      fontWeight: FontWeight.w600,
-      decoration: TextDecoration.none
-  );
-
-  static const TextStyle textBold14 = TextStyle(
+  static TextStyle textBold14 = TextStyle(
     fontSize: Dimens.font_sp14,
     fontWeight: FontWeight.bold,
     fontFamily: "Sen",
   );
 
-  static const TextStyle textBold14R = TextStyle(
+  static TextStyle textBold14R = TextStyle(
       fontSize: Dimens.font_sp14,
       fontWeight: FontWeight.w400,
-      fontFamily: "Sen",
-      color: Colours.TEXT
-  );
+      fontFamily: "SenRegular",
+      color: Colours.TEXT_NAME);
 
   static const TextStyle textSize40 = TextStyle(
       fontSize: Dimens.font_sp40,
       color: Colours.TEXT,
       fontFamily: "Sen",
       fontWeight: FontWeight.w700,
-      decoration: TextDecoration.none
-  );
+      decoration: TextDecoration.none);
 
-  static const TextStyle textSize14ColorR = TextStyle(
+  static TextStyle textSize14ColorR = TextStyle(
       fontSize: Dimens.font_sp14,
       fontWeight: FontWeight.w400,
       fontFamily: "Sen",
-      color: Colours.MAIN_COLOR
-  );
+      color: Colours.MAIN_COLOR);
 
-  static const TextStyle textSize14ColorW = TextStyle(
+  static TextStyle textSize14ColorW = TextStyle(
       fontSize: Dimens.font_sp14,
       fontWeight: FontWeight.w400,
       fontFamily: "Sen",
-      color: Colors.white
-  );
+      color: Colors.white);
 
   static const TextStyle textSize16ColorW = TextStyle(
       fontSize: Dimens.font_sp16,
       fontWeight: FontWeight.w400,
       fontFamily: "Sen",
-      color: Colors.white
-  );
+      color: Colors.white);
 
-  static const TextStyle textSize18T= TextStyle(
+  static TextStyle textSize18T = TextStyle(
       fontSize: Dimens.font_sp18,
       fontWeight: FontWeight.w400,
       fontFamily: "Sen",
-      color:Colours.TEXT
-  );
+      color: Colours.TEXT);
 
-  static const TextStyle textSize16T= TextStyle(
+  static const TextStyle textSize16T = TextStyle(
       fontSize: Dimens.font_sp16,
       fontWeight: FontWeight.w400,
       fontFamily: "Sen",
-      color:Colours.TEXT
-  );
+      color: Colours.TEXT);
 
-  static const TextStyle textBold18T = TextStyle(
+  static TextStyle textBold18T = TextStyle(
       fontSize: Dimens.font_sp18,
       fontWeight: FontWeight.w400,
       fontFamily: "Sen",
-      color:Colours.TEXT
-  );
+      color: Colours.TEXT);
 
   static const TextStyle textBold16T = TextStyle(
       fontSize: Dimens.font_sp16,
       fontWeight: FontWeight.w600,
       fontFamily: "Sen",
-      color:Colours.TEXT
-  );
+      color: Colours.TEXT);
 
+  static TextStyle textSize34S = TextStyle(
+      fontSize: Dimens.font_sp34,
+      fontWeight: FontWeight.w700,
+      fontFamily: "Sen",
+      color: Colours.TEXT);
 
-  static const TextStyle textBold14T = TextStyle(
+  static TextStyle textBold14T = TextStyle(
       fontSize: Dimens.font_sp14,
       fontWeight: FontWeight.w500,
       fontFamily: "Sen",
-      color:Colours.TEXT
-  );
+      color: Colours.TEXT);
 
-  static const TextStyle textBold14S = TextStyle(
+  static TextStyle textBold14S = TextStyle(
       fontSize: Dimens.font_sp14,
       fontWeight: FontWeight.w500,
       fontFamily: "Sen",
-      color:Colours.TEXT_SHADOWN
-  );
+      color: Colours.TEXT_SHADOWN);
 
-  static const TextStyle text16R = TextStyle(
+  static TextStyle text16R = TextStyle(
       fontSize: Dimens.font_sp16,
       fontWeight: FontWeight.w500,
       fontFamily: "Sen",
-      color:Colours.TEXT_SHADOWN
-  );
+      color: Colours.TEXT_SHADOWN);
 
-  static const TextStyle text14R = TextStyle(
+  static TextStyle text14R = TextStyle(
       fontSize: Dimens.font_sp14,
       fontWeight: FontWeight.w500,
       fontFamily: "Sen",
-      color:Colours.TEXT_SHADOWN
-  );
+      color: Colours.TEXT_SHADOWN);
 
-
-  static const TextStyle textBold14N = TextStyle(
+  static TextStyle textBold14N = TextStyle(
       fontSize: Dimens.font_sp14,
       fontWeight: FontWeight.w600,
       fontFamily: "Sen",
-      color:Colours.TEXT_NAME
-  );
+      color: Colours.TEXT_NAME);
 
-  static const TextStyle textBold18 = TextStyle(
+  static TextStyle textBold18 = TextStyle(
       fontSize: Dimens.font_sp18,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w700,
       fontFamily: "Sen",
-      color:Colours.TEXT_NAME
-  );
+      color: Colours.TEXT);
 
   static const TextStyle text16R400 = TextStyle(
       fontSize: Dimens.font_sp16,
       fontWeight: FontWeight.w400,
       fontFamily: "Sen",
-      color:Colours.TEXT_SLIDE
-  );
+      color: Colours.TEXT_SLIDE);
 
   static const TextStyle text16R400UNDERLINE = TextStyle(
     fontSize: Dimens.font_sp16,
     fontWeight: FontWeight.w400,
     fontFamily: "Sen",
-    color:Colours.MAIN_COLOR,
-
+    color: Colours.MAIN_COLOR,
   );
 
-  static const TextStyle text14Confirm = TextStyle(
+  static TextStyle text14Confirm = TextStyle(
     fontSize: Dimens.font_sp14,
     fontWeight: FontWeight.w400,
     fontFamily: "Sen",
-    color:Colours.TEXT_CONFIRM_ITEM,
+    color: Colours.TEXT_CONFIRM_ITEM,
   );
 
   static const TextStyle text17Confirm = TextStyle(
     fontSize: Dimens.font_sp17,
     fontWeight: FontWeight.bold,
     fontFamily: "Sen",
-    color:Colours.TEXT_CONFIRM_TITLE,
+    color: Colours.TEXT_CONFIRM_TITLE,
   );
 
   static const TextStyle text17ShareConfirm = TextStyle(
     fontSize: Dimens.font_sp17,
     fontWeight: FontWeight.bold,
     fontFamily: "Sen",
-    color:Colours.TEXT_SHARE_CONFIRM_TITLE,
+    color: Colours.TEXT_SHARE_CONFIRM_TITLE,
   );
 }

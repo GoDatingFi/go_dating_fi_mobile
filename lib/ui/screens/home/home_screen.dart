@@ -7,7 +7,10 @@ import 'package:go_dating_fi_mobile/ui/screens/profile/profile_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/assets_utils.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/language/languages.dart';
+import '../widgets/swipe/cards_stack_widget.dart';
 import '../widgets/utils/colors.dart';
+import '../widgets/utils/text_style.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -104,8 +107,18 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _bodyHome() {
     return Builder(builder: (context) {
       return Consumer<DatingProvider>(builder: (context, dating, _) {
-        return Container(
-          color: Colors.red,
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: false,
+            backgroundColor: Colors.white,
+            titleSpacing: -40,
+            title: Text(
+              Languages.of(context)!.appName,
+              style: TextStyles.textSize34S,
+            ),
+            elevation: 0,
+          ),
+          body: const CardsStackWidget(),
         );
       });
     });

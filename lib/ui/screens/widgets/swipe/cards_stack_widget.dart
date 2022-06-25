@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/model/profile_model.dart';
 import '../../../../main.dart';
@@ -194,19 +195,19 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
                   return PositionedTransition(
                     rect: RelativeRectTween(
                       begin: RelativeRect.fromSize(
-                          const Rect.fromLTWH(0, 0, 580, 340),
-                          const Size(580, 340)),
+                          Rect.fromLTWH(0, 0, 580.sm, 340.sm),
+                          Size(580.sm, 340.sm)),
                       end: RelativeRect.fromSize(
                           Rect.fromLTWH(
                               swipe != Swipe.none
                                   ? swipe == Swipe.left
-                                      ? -300
-                                      : 300
+                                      ? -300.sm
+                                      : 300.sm
                                   : 0,
                               0,
-                              580,
-                              340),
-                          const Size(580, 340)),
+                              580.sm,
+                              340.sm),
+                          Size(580.sm, 340.sm)),
                     ).animate(CurvedAnimation(
                       parent: _animationController,
                       curve: Curves.easeInOut,
@@ -246,11 +247,11 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
           ),
         ),
         Positioned(
-          bottom: 10,
+          bottom: 10.sm,
           left: 0,
           right: 0,
           child: Padding(
-            padding: const EdgeInsets.only(bottom: 46.0),
+            padding: EdgeInsets.only(bottom: 80.sm),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -264,7 +265,7 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
                     color: Colors.grey,
                   ),
                 ),
-                const SizedBox(width: 20),
+                SizedBox(width: 20.sm),
                 ActionButtonWidget(
                   onPressed: () {
                     swipeNotifier.value = Swipe.right;
@@ -289,9 +290,9 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
             ) {
               return IgnorePointer(
                 child: Container(
-                  height: 700.0,
-                  width: 80.0,
-                  color: Colors.red,
+                  height: 0.8.sh,
+                  width: 100.sm,
+                  color: Colors.transparent,
                 ),
               );
             },
@@ -312,9 +313,9 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
             ) {
               return IgnorePointer(
                 child: Container(
-                  height: 700.0,
-                  width: 80.0,
-                  color: Colors.blue,
+                  height: 0.8.sh,
+                  width: 100.sm,
+                  color: Colors.transparent,
                 ),
               );
             },

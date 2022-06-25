@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/chat/all_chat.dart';
-import '../widgets/chat/recent_chats.dart';
+import '../widgets/chat/list_matching_horizon.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({
@@ -13,7 +13,7 @@ class ChatPage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: const [
-          RecentChats(),
+          ListMatchingHorizon(),
           AllChats(),
         ],
       ),

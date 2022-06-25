@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/colors.dart';
 
 import '../../../../core/model/chat/message_model.dart';
 import '../../chat/chat_room.dart';
 import '../utils/app_theme.dart';
+import '../utils/text_style.dart';
 
 class AllChats extends StatelessWidget {
   const AllChats({Key? key}) : super(key: key);
@@ -12,17 +15,6 @@ class AllChats extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          padding: const EdgeInsets.only(top: 10),
-          child: Row(
-            children: const [
-              Text(
-                'All Chats',
-                style: MyTheme.heading2,
-              ),
-            ],
-          ),
-        ),
         ListView.builder(
             shrinkWrap: true,
             physics: const ScrollPhysics(),
@@ -30,12 +22,29 @@ class AllChats extends StatelessWidget {
             itemBuilder: (context, int index) {
               final allChat = allChats[index];
               return Container(
-                  margin: const EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.only(top: 10),
                   child: Row(
                     children: [
-                      CircleAvatar(
-                        radius: 28,
-                        backgroundImage: AssetImage(allChat.avatar!),
+                      Stack(
+                        children: [
+                          CircleAvatar(
+                              radius: 46.sm,
+                              backgroundImage: AssetImage(allChat.avatar!),
+                              child: Align(
+                                alignment: Alignment.bottomLeft,
+                                child: CircleAvatar(
+                                  radius: 10.sm,
+                                  backgroundColor: Colors.white,
+                                  child: Container(
+                                      width: 13.sm,
+                                      height: 13.sm,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colours.MAIN_COLOR,
+                                      )),
+                                ),
+                              )),
+                        ],
                       ),
                       const SizedBox(
                         width: 20,
@@ -44,8 +53,8 @@ class AllChats extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               CupertinoPageRoute(builder: (context) {
-                                return ChatRoom(user: allChat.sender);
-                              }));
+                            return ChatRoom(user: allChat.sender);
+                          }));
                         },
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,13 +62,11 @@ class AllChats extends StatelessWidget {
                           children: [
                             Text(
                               allChat.sender!.name!,
-                              style: MyTheme.heading2.copyWith(
-                                fontSize: 16,
-                              ),
+                              style: TextStyles.textBold18,
                             ),
                             Text(
                               allChat.text!,
-                              style: MyTheme.bodyText1,
+                              style: TextStyles.text16R,
                             ),
                           ],
                         ),
@@ -70,26 +77,26 @@ class AllChats extends StatelessWidget {
                         children: [
                           allChat.unreadCount == 0
                               ? Icon(
-                            Icons.done_all,
-                            color: MyTheme.bodyTextTime.color,
-                          )
+                                  Icons.done_all,
+                                  color: MyTheme.bodyTextTime.color,
+                                )
                               : CircleAvatar(
-                            radius: 8,
-                            backgroundColor: MyTheme.kUnreadChatBG,
-                            child: Text(
-                              allChat.unreadCount.toString(),
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                                  radius: 8,
+                                  backgroundColor: MyTheme.kUnreadChatBG,
+                                  child: Text(
+                                    allChat.unreadCount.toString(),
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
                           const SizedBox(
                             height: 10,
                           ),
                           Text(
                             allChat.time!,
-                            style: MyTheme.bodyTextTime,
+                            style: TextStyles.textSize12r,
                           )
                         ],
                       ),

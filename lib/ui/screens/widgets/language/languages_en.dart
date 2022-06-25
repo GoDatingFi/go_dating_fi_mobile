@@ -12,4 +12,7 @@ class LanguageEn extends Languages {
 
   @override
   String get labelInfo => "This is multi-languages demo application";
+
+  @override
+  String get matches => "Matches";
 }
