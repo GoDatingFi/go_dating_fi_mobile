@@ -1,7 +1,6 @@
 import 'languages.dart';
 
 class LanguageVn extends Languages {
-
   @override
   String get appName => "GoDatingFi";
 
@@ -17,4 +16,24 @@ class LanguageVn extends Languages {
   @override
   String get matches => "Đã hợp";
 
+  @override
+  String get forgotPassword => "Quên mật khẩu";
+
+  @override
+  String get login => "Đăng nhập";
+
+  @override
+  String get loginWith => "Đăng nhập với";
+
+  @override
+  String get newMember => "Thành viên mới ";
+
+  @override
+  String get password => "Mật khẩu";
+
+  @override
+  String get phoneNumber => "Số điện thoại";
+
+  @override
+  String get register => "Đăng ký";
 }

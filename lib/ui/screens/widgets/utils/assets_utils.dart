@@ -7,4 +7,13 @@ class AssetsUtils {
   static const HOME_ICON = "assets/icon/home.png";
 
   static const FIRE_ICON = "assets/icon/fire.svg";
+
+  static const FACE_ICON = "assets/icon/face.svg";
+  static const GOOGLE_ICON = "assets/icon/google.svg";
+  static const TWITTER_ICON = "assets/icon/twitter.svg";
+
+  static const PHONE_ICON = "assets/icon/call.svg";
+  static const PASSWORD_ICON = "assets/icon/lock.svg";
+
+  static const LOGO_TRANSPARENT = "assets/icon/logo.png";
 }

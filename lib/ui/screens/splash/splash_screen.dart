@@ -27,7 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
         });
       } else {
         _timer.cancel();
-        NavigatorUtils.pushReplacementNamed(context, RouterGenerator.routeHome);
+        NavigatorUtils.pushReplacementNamed(
+            context, RouterGenerator.routeLogin);
       }
     });
   }
@@ -40,18 +41,20 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: 0.2.sw,
-        height: 0.2.sw,
-        child: Image.asset(
-          AssetsUtils.LOGO,
-          fit: BoxFit.cover,
-          height: double.infinity,
-          width: double.infinity,
-          alignment: Alignment.center,
-        ),
-      ),
-    );
+    return Container(
+        color: Colors.white,
+        child: Center(
+          child: SizedBox(
+            width: 0.4.sw,
+            height: 0.4.sw,
+            child: Image.asset(
+              AssetsUtils.LOGO_TRANSPARENT,
+              fit: BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
+              alignment: Alignment.center,
+            ),
+          ),
+        ));
   }
 }

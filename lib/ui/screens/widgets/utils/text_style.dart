@@ -49,7 +49,7 @@ class TextStyles {
       fontFamily: "Sen",
       color: Colors.white);
 
-  static const TextStyle textSize16ColorW = TextStyle(
+  static  TextStyle textSize16ColorW = TextStyle(
       fontSize: Dimens.font_sp16,
       fontWeight: FontWeight.w400,
       fontFamily: "Sen",
@@ -61,7 +61,7 @@ class TextStyles {
       fontFamily: "Sen",
       color: Colours.TEXT);
 
-  static const TextStyle textSize16T = TextStyle(
+  static  TextStyle textSize16T = TextStyle(
       fontSize: Dimens.font_sp16,
       fontWeight: FontWeight.w400,
       fontFamily: "Sen",
@@ -73,17 +73,35 @@ class TextStyles {
       fontFamily: "Sen",
       color: Colours.TEXT);
 
-  static const TextStyle textBold16T = TextStyle(
+  static  TextStyle textBold16Text = TextStyle(
       fontSize: Dimens.font_sp16,
-      fontWeight: FontWeight.w600,
-      fontFamily: "Sen",
-      color: Colours.TEXT);
+      fontWeight: FontWeight.w400,
+      fontFamily: "SenRegular",
+      color: Colours.TEXT_HIGHT);
+
+  static  TextStyle textBold16White = TextStyle(
+      fontSize: Dimens.font_sp16,
+      fontWeight: FontWeight.w700,
+      fontFamily: "SenRegular",
+      color: Colors.white);
+
+  static  TextStyle textBold16TextNormal = TextStyle(
+      fontSize: Dimens.font_sp16,
+      fontWeight: FontWeight.w400,
+      fontFamily: "SenRegular",
+      color: Colours.READ_TEXT);
 
   static TextStyle textSize34S = TextStyle(
       fontSize: Dimens.font_sp34,
       fontWeight: FontWeight.w700,
       fontFamily: "Sen",
       color: Colours.TEXT);
+
+  static TextStyle textSize34MainColor = TextStyle(
+      fontSize: Dimens.font_sp34,
+      fontWeight: FontWeight.w700,
+      fontFamily: "Sen",
+      color: Colours.MAIN_COLOR);
 
   static TextStyle textBold14T = TextStyle(
       fontSize: Dimens.font_sp14,
@@ -121,13 +139,20 @@ class TextStyles {
       fontFamily: "Sen",
       color: Colours.TEXT);
 
-  static const TextStyle text16R400 = TextStyle(
+
+  static TextStyle textBold18R = TextStyle(
+      fontSize: Dimens.font_sp18,
+      fontWeight: FontWeight.w400,
+      fontFamily: "SenRegular",
+      color: Colours.READ_TEXT);
+
+  static  TextStyle text16R400 = TextStyle(
       fontSize: Dimens.font_sp16,
       fontWeight: FontWeight.w400,
       fontFamily: "Sen",
       color: Colours.TEXT_SLIDE);
 
-  static const TextStyle text16R400UNDERLINE = TextStyle(
+  static  TextStyle text16R400UNDERLINE = TextStyle(
     fontSize: Dimens.font_sp16,
     fontWeight: FontWeight.w400,
     fontFamily: "Sen",
