@@ -87,6 +87,9 @@ dependencies:
   #svg
   flutter_svg: ^1.1.0
 
+  #keyboard
+  flutter_keyboard_visibility: ^5.3.0
+
   story_view:
     path: ../go_dating_fi_mobile/library/story_view
   assets_media:

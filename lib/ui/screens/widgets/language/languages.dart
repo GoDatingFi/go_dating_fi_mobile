@@ -15,4 +15,17 @@ abstract class Languages {
 
   String get matches;
 
+  String get phoneNumber;
+
+  String get password;
+
+  String get forgotPassword;
+
+  String get login;
+
+  String get loginWith;
+
+  String get newMember;
+
+  String get register;
 }

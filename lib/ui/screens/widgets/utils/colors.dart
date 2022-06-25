@@ -41,4 +41,6 @@ class Colours {
 
   static const Color TIME_COLOR = Color(0xFFC6C6D7);
 
+  static const Color TEXT_HIGHT = Color(0xFF4B9EFF);
+
 }
