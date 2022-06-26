@@ -264,7 +264,7 @@ class _DevicesListScreenState extends State<DevicesListScreen> {
     receivedDataSubscription =
         nearbyService.dataReceivedSubscription(callback: (data) {
       Logger().d("dataReceivedSubscription: ${jsonEncode(data)}");
-      Common().showToast(jsonEncode(data));
+      Common().showToastErr(jsonEncode(data));
     });
   }
 }

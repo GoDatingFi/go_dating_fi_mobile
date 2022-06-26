@@ -8,7 +8,7 @@ import 'colors.dart';
 import 'dimens.dart';
 
 class Common {
-  void showToast(String str) {
+  void showToastErr(String str) {
     Fluttertoast.showToast(
         msg: str,
         toastLength: Toast.LENGTH_SHORT,
@@ -35,17 +35,20 @@ class Common {
     prefs.setString(key, value);
   }
 
-  TextFormField editTextCommon(
-      {String labelValue = "",
-      String hintValue = "",
-      bool? validation,
-      TextEditingController? controller,
-      TextInputType keyboardType = TextInputType.text,
-      TextStyle? textStyle,
-      String? validationErrorMsg,
-      bool obscureText = false,
-      bool isReadOnly = false,
-      Widget? wLeft}) {
+  TextFormField editTextCommon({
+    String labelValue = "",
+    String hintValue = "",
+    bool? validation,
+    TextEditingController? controller,
+    TextInputType keyboardType = TextInputType.text,
+    TextStyle? textStyle,
+    String? validationErrorMsg,
+    bool obscureText = false,
+    bool isReadOnly = false,
+    Widget? wLeft,
+    Widget? wRight,
+    VoidCallback? onClick,
+  }) {
     TextFormField textFormField = TextFormField(
       keyboardType: keyboardType,
       style: textStyle,
@@ -59,11 +62,12 @@ class Common {
             return validationErrorMsg;
           }
         }
+        return null;
       },
       decoration: InputDecoration(
           labelText: labelValue,
           hintText: hintValue,
-          labelStyle: textStyle ?? TextStyles.textBold18R,
+          labelStyle: TextStyles.textBold18R,
           hintStyle: TextStyles.textBold18R,
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.sm),
@@ -74,6 +78,15 @@ class Common {
           prefixIcon: Padding(
             padding: EdgeInsets.all(15.sm),
             child: wLeft ?? Container(),
+          ),
+          suffixIcon: Padding(
+            padding: EdgeInsets.all(15.sm),
+            child: wRight != null
+                ? InkWell(
+                    child: wRight,
+                    onTap: onClick,
+                  )
+                : const SizedBox(),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.sm),

@@ -41,7 +41,7 @@ class LanguageVn extends Languages {
   String get hi => "Chào !";
 
   @override
-  String get titleWelcome => "Chào mừng bạn trở lại, bạn đã bị bỏ lỡ!";
+  String get titleWelcome => "Chào mừng đến với ";
 
   @override
   String get titleSelectZodiac => "Chọn cung hoàng đạo bạn thích";
@@ -84,4 +84,10 @@ class LanguageVn extends Languages {
 
   @override
   String get textContinue => "Tiếp tục";
+
+  @override
+  String get textLoading => "Đang tải";
+
+  @override
+  String get errLogin => "Tên đăng nhập hoặc mật khẩu không đúng";
 }

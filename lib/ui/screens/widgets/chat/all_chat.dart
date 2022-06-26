@@ -66,7 +66,7 @@ class AllChats extends StatelessWidget {
                             ),
                             Text(
                               allChat.text!,
-                              style: TextStyles.text16R,
+                              style: TextStyles.textBold14R,
                             ),
                           ],
                         ),

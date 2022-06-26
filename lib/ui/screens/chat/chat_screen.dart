@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/language/languages.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/text_style.dart';
+import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 import 'chat_page.dart';
 
@@ -12,6 +13,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
+  late IO.Socket _socket;
 
   @override
   Widget build(BuildContext context) {

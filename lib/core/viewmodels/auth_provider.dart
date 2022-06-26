@@ -13,7 +13,7 @@ class AuthProvider extends AuthModel {
 
   AuthServices authServices = locator<AuthServices>();
 
-  void getImageForSwipe(
+  void login(
       BuildContext context, String strUserName, String strPassword) async {
     _userDataModel =
         await authServices.login(context, strUserName, strPassword);
