@@ -5,6 +5,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_dating_fi_mobile/core/viewmodels/auth_provider.dart';
+import 'package:go_dating_fi_mobile/ui/screens/widgets/dialog/loading_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/language/languages.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/common.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/text_style.dart';
@@ -24,13 +25,15 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  late TextEditingController userNameController;
-  late TextEditingController passwordController;
+  late TextEditingController _userNameController;
+  late TextEditingController _passwordController;
+
+  bool _isShowPassword = true;
 
   @override
   void initState() {
-    userNameController = TextEditingController();
-    passwordController = TextEditingController();
+    _userNameController = TextEditingController();
+    _passwordController = TextEditingController();
     super.initState();
   }
 
@@ -69,10 +72,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     margin: EdgeInsets.only(left: 16.sm),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Text(
-                        Languages.of(context)!.titleWelcome,
-                        style: TextStyles.textBold14R,
-                        textAlign: TextAlign.left,
+                      child: RichText(
+                        text: TextSpan(
+                          text: Languages.of(context)!.titleWelcome,
+                          style: TextStyles.textBold14R,
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: Languages.of(context)!.appName,
+                                style: TextStyles.text16R400UNDERLINE),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -85,7 +94,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintValue: Languages.of(context)!.phoneNumber,
                         wLeft: SvgPicture.asset(
                           AssetsUtils.PHONE_ICON,
-                        )),
+                        ),
+                        controller: _userNameController),
                   ),
                   SizedBox(
                     height: 16.sm,
@@ -96,7 +106,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintValue: Languages.of(context)!.password,
                         wLeft: SvgPicture.asset(
                           AssetsUtils.PASSWORD_ICON,
-                        )),
+                        ),
+                        wRight: _isShowPassword == true
+                            ? const Icon(Icons.remove_red_eye_outlined)
+                            : const Icon(Icons.visibility_off),
+                        obscureText: _isShowPassword,
+                        onClick: (){
+                          setState(() {
+                            _isShowPassword = !_isShowPassword;
+                          });
+                        },
+                        controller: _passwordController),
                   ),
                   SizedBox(
                     height: 16.sm,
@@ -122,7 +142,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Common().buttonCommon(
                         strTitle: Languages.of(context)!.login,
                         dHeight: 32.h,
-                        onClick: () {}),
+                        onClick: () {
+                          String userName = _userNameController.text.trim();
+                          String password = _passwordController.text.trim();
+                          Logger().i("LOngkaka");
+                          if (userName.isEmpty || password.isEmpty) {
+                            return;
+                          }
+                          Logger().i("LOngkaka");
+                          LoadingScreen().show(
+                              context: context,
+                              text: Languages.of(context)!.textLoading);
+                          auth.login(context, userName, password);
+                        }),
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 50.sm),
@@ -182,7 +214,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ],
                                 ),
                               )),
-                          onTap: () {},
+                          onTap: () {
+
+                          },
                         )),
                   ));
             }),

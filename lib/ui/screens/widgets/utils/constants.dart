@@ -13,4 +13,6 @@ class Constants {
   static const CAPRICORNUS_DATE = "22/12 – 19/1";
   static const AQUARIUS_DATE = "20/1 – 18/2";
   static const PISCES_DATE = "19/2 – 20/3";
+
+  static const TOKEN_PARAMETER = "TOKEN";
 }

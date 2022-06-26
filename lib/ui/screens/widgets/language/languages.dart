@@ -60,4 +60,8 @@ abstract class Languages {
   String get textPisces;
 
   String get textContinue;
+
+  String get textLoading;
+
+  String get errLogin;
 }

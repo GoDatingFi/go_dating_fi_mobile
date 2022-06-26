@@ -41,7 +41,7 @@ class LanguageEn extends Languages {
   String get hi => "Hi !";
 
   @override
-  String get titleWelcome => "Wellcome back you're been missed!";
+  String get titleWelcome => "Welcome to ";
 
   @override
   String get titleSelectZodiac => "Select the zodiac you like";
@@ -84,4 +84,10 @@ class LanguageEn extends Languages {
 
   @override
   String get textContinue => "Continue";
+
+  @override
+  String get textLoading => "Loading";
+
+  @override
+  String get errLogin => "Username or Password not correct";
 }
