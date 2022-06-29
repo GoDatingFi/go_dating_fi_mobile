@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_dating_fi_mobile/ui/screens/auth/gender_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/chat_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/socket_screen.dart';
+import 'package:go_dating_fi_mobile/ui/screens/location/location_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/swipe/swipe_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/wallet/wallet_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/zodiac/select_zodiac_screen.dart';
@@ -26,6 +28,8 @@ class RouterGenerator {
   static const routeWalletScreen = "/RouterWalletScreen";
   static const routeChatScreen = "/RouterChatScreen";
   static const routeSelectZodiacScreen = "/SelectZodiacScreen";
+  static const routeLocationScreen = "/LocationScreen";
+  static const routeGenderScreen = "/GenderScreen";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -56,8 +60,13 @@ class RouterGenerator {
         return MaterialPageRoute(builder: (_) => const WalletScreen());
       case routeChatScreen:
         return MaterialPageRoute(builder: (_) => const ChatScreen());
+      case routeLocationScreen:
+        return MaterialPageRoute(builder: (_) => const LocationScreen());
       case routeSelectZodiacScreen:
         return MaterialPageRoute(builder: (_) => const SelectZodiacScreen());
+      case routeGenderScreen:
+        return MaterialPageRoute(builder: (_) => const GenderScreen());
+
       default:
         break;
     }

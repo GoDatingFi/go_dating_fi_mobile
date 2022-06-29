@@ -31,4 +31,16 @@ class AssetsUtils {
   static const CAPRICORNUS_ICON = "assets/icon/capricornus.svg";
   static const AQUARIUS_ICON = "assets/icon/aquarius.svg";
   static const PISCES = "assets/icon/pisces.svg";
+
+  static const IMAGES_LOCATION = "assets/images/location.png";
+
+  static const MALE = "assets/images/male.png";
+  static const FE_MALE = "assets/images/female.png";
+
+  static const USER_ICON = "assets/icon/user.svg";
+  static const GIFT_ICON = "assets/icon/gift.svg";
+
+  static const CALENDAR_ICON = "assets/icon/calendar.svg";
+
+
 }

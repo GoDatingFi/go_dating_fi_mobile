@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
       } else {
         _timer.cancel();
         NavigatorUtils.pushReplacementNamed(
-            context, RouterGenerator.routeLogin);
+            context, RouterGenerator.routeGenderScreen);
       }
     });
   }

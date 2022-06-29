@@ -90,4 +90,29 @@ class LanguageVn extends Languages {
 
   @override
   String get errLogin => "Tên đăng nhập hoặc mật khẩu không đúng";
+
+  @override
+  String get buttonLocation => "Allow location";
+
+  @override
+  String get desLocation =>
+      "You'll need to enable your location in order to use GoDatingFi";
+
+  @override
+  String get titleLocation => "Enable location";
+
+  @override
+  String get birthDay => "BirthDay";
+
+  @override
+  String get nickName => "Nick name";
+
+  @override
+  String get titleFemale => "Female";
+
+  @override
+  String get titleGender => "Gender";
+
+  @override
+  String get titleMale => "Male";
 }

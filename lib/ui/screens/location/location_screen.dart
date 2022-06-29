@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_dating_fi_mobile/ui/screens/widgets/language/languages.dart';
+import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/text_style.dart';
 import 'package:location/location.dart';
+
+import '../widgets/utils/assets_utils.dart';
+import '../widgets/utils/common.dart';
 
 class LocationScreen extends StatefulWidget {
   const LocationScreen({Key? key}) : super(key: key);
@@ -17,7 +23,6 @@ class _LocationScreenState extends State<LocationScreen> {
 
   @override
   void initState() {
-    _getLocation();
     super.initState();
   }
 
@@ -44,10 +49,51 @@ class _LocationScreenState extends State<LocationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Longkaka"),
+        body: Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 200.sm),
+              child: Text(
+                Languages.of(context)!.titleLocation,
+                style: TextStyles.textSize34S,
+              ),
+            ),
+            SizedBox(height: 20.h),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20.sm),
+              child: Text(
+                Languages.of(context)!.desLocation,
+                textAlign: TextAlign.center,
+                style: TextStyles.textBold12RText,
+              ),
+            ),
+            SizedBox(height: 20.h),
+            Container(
+              color: Colors.transparent,
+              margin: EdgeInsets.all(10.sm),
+              width: 250.w,
+              height: 200.w,
+              child: Image.asset(
+                AssetsUtils.IMAGES_LOCATION,
+                fit: BoxFit.fill,
+                alignment: Alignment.center,
+              ),
+            ),
+            SizedBox(height: 70.h),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20.sm),
+              child: Common().buttonCommon(
+                  strTitle: Languages.of(context)!.buttonLocation,
+                  dHeight: 32.h,
+                  onClick: () async {
+                    _getLocation();
+                  }),
+            ),
+          ],
+        ),
       ),
-      body: Container(),
-    );
+    ));
   }
 }
