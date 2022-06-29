@@ -1,5 +1,5 @@
 class Constants {
-  static const CHATING_SERVER = "https://chat.godatingfi.com";
+  static const CHATING_SERVER = "http://194.127.192.210:5000";
 
   static const ARIES_DATE = "21/3 – 19/4";
   static const TAURUS_DATE = "20/4 – 20/5";
@@ -15,4 +15,11 @@ class Constants {
   static const PISCES_DATE = "19/2 – 20/3";
 
   static const TOKEN_PARAMETER = "TOKEN";
+
+  static const CREATE_ROOM = "create_room";
+  static const JOIN_ROOM = "join_room";
+
+  static const ROOMS = "rooms";
+  static const SEND_MESSAGE = "send_message";
+  static const LOAD_MESSAGE = "load_message";
 }

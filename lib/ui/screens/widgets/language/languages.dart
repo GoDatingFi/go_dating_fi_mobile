@@ -64,4 +64,21 @@ abstract class Languages {
   String get textLoading;
 
   String get errLogin;
+
+  String get titleLocation;
+
+  String get desLocation;
+
+  String get buttonLocation;
+
+  String get titleGender;
+
+  String get titleMale;
+
+  String get titleFemale;
+
+  String get nickName;
+
+  String get birthDay;
+
 }
