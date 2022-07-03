@@ -95,7 +95,8 @@ class LanguageEn extends Languages {
   String get buttonLocation => "Allow location";
 
   @override
-  String get desLocation => "You'll need to enable your location in order to use GoDatingFi";
+  String get desLocation =>
+      "You'll need to enable your location in order to use GoDatingFi";
 
   @override
   String get titleLocation => "Enable location";
@@ -115,5 +116,6 @@ class LanguageEn extends Languages {
   @override
   String get titleMale => "Male";
 
-
+  @override
+  String get addPhotos => "Add Photos";
 }

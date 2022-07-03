@@ -81,4 +81,6 @@ abstract class Languages {
 
   String get birthDay;
 
+  String get addPhotos;
+
 }

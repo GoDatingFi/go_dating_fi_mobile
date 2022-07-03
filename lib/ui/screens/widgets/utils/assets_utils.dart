@@ -42,5 +42,8 @@ class AssetsUtils {
 
   static const CALENDAR_ICON = "assets/icon/calendar.svg";
 
+  static const BACKGROUND_PHOTOS = "assets/images/background_photos.png";
+  static const ITEM_PHOTOS = "assets/images/item.png";
+  static const ADD_PHOTOS = "assets/images/add.png";
 
 }
