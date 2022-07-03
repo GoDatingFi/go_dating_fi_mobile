@@ -92,27 +92,30 @@ class LanguageVn extends Languages {
   String get errLogin => "Tên đăng nhập hoặc mật khẩu không đúng";
 
   @override
-  String get buttonLocation => "Allow location";
+  String get buttonLocation => "Chấp nhận vị trí";
 
   @override
   String get desLocation =>
-      "You'll need to enable your location in order to use GoDatingFi";
+      "Bạn sẽ cần kích hoạt vị trí của mình để sử dụng GoDatingFi";
 
   @override
-  String get titleLocation => "Enable location";
+  String get titleLocation => "Cho phép vị trí";
 
   @override
-  String get birthDay => "BirthDay";
+  String get birthDay => "Ngày sinh nhật";
 
   @override
-  String get nickName => "Nick name";
+  String get nickName => "Tên";
 
   @override
-  String get titleFemale => "Female";
+  String get titleFemale => "Nữ giới";
 
   @override
-  String get titleGender => "Gender";
+  String get titleGender => "Giới tính";
 
   @override
-  String get titleMale => "Male";
+  String get titleMale => "Name giới";
+
+  @override
+  String get addPhotos => "Thêm Hình Ảnh";
 }

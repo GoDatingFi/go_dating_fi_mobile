@@ -3,6 +3,7 @@ import 'package:go_dating_fi_mobile/ui/screens/auth/gender_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/chat_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/socket_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/location/location_screen.dart';
+import 'package:go_dating_fi_mobile/ui/screens/photo/add_photo_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/swipe/swipe_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/wallet/wallet_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/zodiac/select_zodiac_screen.dart';
@@ -30,6 +31,7 @@ class RouterGenerator {
   static const routeSelectZodiacScreen = "/SelectZodiacScreen";
   static const routeLocationScreen = "/LocationScreen";
   static const routeGenderScreen = "/GenderScreen";
+  static const routeAddPhotos = "/AddPhotos";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -66,6 +68,8 @@ class RouterGenerator {
         return MaterialPageRoute(builder: (_) => const SelectZodiacScreen());
       case routeGenderScreen:
         return MaterialPageRoute(builder: (_) => const GenderScreen());
+      case routeAddPhotos:
+        return MaterialPageRoute(builder: (_) => const AddPhotoScreen());
 
       default:
         break;
