@@ -7,11 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/app_bar_common.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/helper/picker_image.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/language/languages.dart';
-import 'package:logger/logger.dart';
 
 import '../widgets/utils/assets_utils.dart';
 import '../widgets/utils/common.dart';
-import 'package:path/path.dart' as path;
 
 class AddPhotoScreen extends StatefulWidget {
   const AddPhotoScreen({Key? key}) : super(key: key);
@@ -21,13 +19,11 @@ class AddPhotoScreen extends StatefulWidget {
 }
 
 class _AddPhotoScreenState extends State<AddPhotoScreen> {
-  late List<AssetEntity>? assets;
-  final bool _running = true;
+  late List<AssetEntity>? assets = <AssetEntity>[];
 
   @override
   void initState() {
     super.initState();
-    assets = <AssetEntity>[];
   }
 
   @override
@@ -80,8 +76,8 @@ class _AddPhotoScreenState extends State<AddPhotoScreen> {
                       ),
                     ),
                     onTap: () async {
-                      assets =
-                          await PickMethod.common(9).method(context, assets!);
+                      assets = await PickMethod.cameraAndStay(maxAssetsCount: 6)
+                          .method(context, assets!);
                       setState(() {
                         assets;
                       });
@@ -107,7 +103,8 @@ class _AddPhotoScreenState extends State<AddPhotoScreen> {
             ],
           ),
           onTap: () async {
-            assets = await PickMethod.common(6).method(context, assets!);
+            assets = await PickMethod.cameraAndStay(maxAssetsCount: 6)
+                .method(context, assets!);
             setState(() {
               assets;
             });

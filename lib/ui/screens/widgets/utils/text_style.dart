@@ -145,6 +145,12 @@ class TextStyles {
       fontFamily: "SenRegular",
       color: Colours.READ_TEXT);
 
+  static TextStyle textBold18RTextName = TextStyle(
+      fontSize: Dimens.font_sp18,
+      fontWeight: FontWeight.w400,
+      fontFamily: "SenRegular",
+      color: Colours.TEXT_NAME);
+
   static TextStyle textBold12RText = TextStyle(
       fontSize: Dimens.font_sp12,
       fontWeight: FontWeight.w400,

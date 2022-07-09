@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_dating_fi_mobile/ui/screens/auth/gender_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/chat_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/socket_screen.dart';
+import 'package:go_dating_fi_mobile/ui/screens/hobby/hobby_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/location/location_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/photo/add_photo_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/swipe/swipe_screen.dart';
@@ -32,6 +33,7 @@ class RouterGenerator {
   static const routeLocationScreen = "/LocationScreen";
   static const routeGenderScreen = "/GenderScreen";
   static const routeAddPhotos = "/AddPhotos";
+  static const routeHobbyScreen = "/HobbyScreen";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -70,7 +72,8 @@ class RouterGenerator {
         return MaterialPageRoute(builder: (_) => const GenderScreen());
       case routeAddPhotos:
         return MaterialPageRoute(builder: (_) => const AddPhotoScreen());
-
+      case routeHobbyScreen:
+        return MaterialPageRoute(builder: (_) => const HobbyScreen());
       default:
         break;
     }
