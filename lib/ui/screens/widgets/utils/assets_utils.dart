@@ -11,6 +11,7 @@ class AssetsUtils {
   static const FACE_ICON = "assets/icon/face.svg";
   static const GOOGLE_ICON = "assets/icon/google.svg";
   static const TWITTER_ICON = "assets/icon/twitter.svg";
+  static const METAMASK_ICON = "assets/images/metamask.png";
 
   static const PHONE_ICON = "assets/icon/call.svg";
   static const PASSWORD_ICON = "assets/icon/lock.svg";
@@ -45,5 +46,5 @@ class AssetsUtils {
   static const BACKGROUND_PHOTOS = "assets/images/background_photos.png";
   static const ITEM_PHOTOS = "assets/images/item.png";
   static const ADD_PHOTOS = "assets/images/add.png";
-
+  static const LOGO_SPLASH = "assets/logo/logo_splash.png";
 }

@@ -1,20 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_dating_fi_mobile/core/viewmodels/auth_provider.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/dialog/loading_screen.dart';
+import 'package:go_dating_fi_mobile/ui/screens/widgets/helper/metamask_helper.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/language/languages.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/common.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/text_style.dart';
 import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
-import 'package:walletconnect_dart/walletconnect_dart.dart';
-
-import '../../router/fluro_navigator.dart';
-import '../../router/router_generator.dart';
+import 'package:wallet_sdk_metamask/wallet_sdk_metamask.dart';
 import '../widgets/utils/assets_utils.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -30,6 +26,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   bool _isShowPassword = true;
 
+  var _session, _uri;
+
   @override
   void initState() {
     _userNameController = TextEditingController();
@@ -39,6 +37,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    MetamaskHelper().listenEvent(
+        callback: (value1) {},
+        payloadCallBack: (value2) {},
+        disconnectCallBack: (value3) {});
     return Scaffold(body: Builder(builder: (context) {
       return Consumer<AuthProvider>(builder: (context, auth, _) {
         return Stack(
@@ -111,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ? const Icon(Icons.remove_red_eye_outlined)
                             : const Icon(Icons.visibility_off),
                         obscureText: _isShowPassword,
-                        onClick: (){
+                        onClick: () {
                           setState(() {
                             _isShowPassword = !_isShowPassword;
                           });
@@ -165,30 +167,22 @@ class _LoginScreenState extends State<LoginScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 40.w,
-                        height: 40.h,
-                        margin: EdgeInsets.all(20.sm),
-                        child: SvgPicture.asset(
-                          AssetsUtils.FACE_ICON,
+                      InkWell(
+                        child: Container(
+                          width: 40.w,
+                          height: 40.h,
+                          margin: EdgeInsets.all(20.sm),
+                          child: Image.asset(AssetsUtils.METAMASK_ICON),
                         ),
-                      ),
-                      Container(
-                        width: 40.w,
-                        height: 40.h,
-                        margin: EdgeInsets.all(20.sm),
-                        child: SvgPicture.asset(
-                          AssetsUtils.GOOGLE_ICON,
-                        ),
-                      ),
-                      Container(
-                        width: 40.w,
-                        height: 40.h,
-                        margin: EdgeInsets.all(20.sm),
-                        child: SvgPicture.asset(
-                          AssetsUtils.TWITTER_ICON,
-                        ),
-                      ),
+                        onTap: () {
+                          MetamaskHelper().loginUsingMetamask(context, _uri,
+                              callback: (value) {
+                                  setState(() {
+                                    _session = value;
+                                  });
+                              });
+                        },
+                      )
                     ],
                   )
                 ],
@@ -214,9 +208,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ],
                                 ),
                               )),
-                          onTap: () {
-
-                          },
+                          onTap: () {},
                         )),
                   ));
             }),

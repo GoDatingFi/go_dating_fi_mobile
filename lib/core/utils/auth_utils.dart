@@ -24,7 +24,7 @@ class AuthUtils {
   late String? _slideTimeId;
   late String? _profileId;
 
-  Future getToken() async {
+  Future<String?> getToken() async {
     if (_token != null && _token!.isNotEmpty) {
       return _token;
     } else {

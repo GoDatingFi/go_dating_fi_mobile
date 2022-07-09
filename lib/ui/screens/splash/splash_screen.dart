@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/assets_utils.dart';
+import 'package:logger/logger.dart';
 
+import '../../../core/utils/auth_utils.dart';
 import '../../router/fluro_navigator.dart';
 import '../../router/router_generator.dart';
 
@@ -27,8 +29,15 @@ class _SplashScreenState extends State<SplashScreen> {
         });
       } else {
         _timer.cancel();
-        NavigatorUtils.pushReplacementNamed(
-            context, RouterGenerator.routeHobbyScreen);
+        var token = await AuthUtils.instance.getToken();
+        Logger().d(token);
+        if (token != null && token.isNotEmpty) {
+          NavigatorUtils.pushReplaceRemoveAll(
+              context, RouterGenerator.routeHome);
+        } else {
+          NavigatorUtils.pushReplaceRemoveAll(
+              context, RouterGenerator.routeLogin);
+        }
       }
     });
   }
@@ -48,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
             width: 0.4.sw,
             height: 0.4.sw,
             child: Image.asset(
-              AssetsUtils.LOGO_TRANSPARENT,
+              AssetsUtils.LOGO_SPLASH,
               fit: BoxFit.cover,
               height: double.infinity,
               width: double.infinity,
