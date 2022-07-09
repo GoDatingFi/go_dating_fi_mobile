@@ -118,4 +118,19 @@ class LanguageVn extends Languages {
 
   @override
   String get addPhotos => "Thêm Hình Ảnh";
+
+  @override
+  List<String> get listHobby => [
+        "90s Kid",
+        "Seft care",
+        "Hot Yoga",
+        "Writing",
+        "Meditation",
+        "Sushi",
+        "Sushi",
+        "Basketball"
+      ];
+
+  @override
+  String get titleHobby => "Hobby";
 }

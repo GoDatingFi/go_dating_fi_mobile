@@ -83,4 +83,8 @@ abstract class Languages {
 
   String get addPhotos;
 
+  List<String> get listHobby;
+
+  String get titleHobby;
+
 }

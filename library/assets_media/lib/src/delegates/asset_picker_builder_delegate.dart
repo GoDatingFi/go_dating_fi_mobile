@@ -8,6 +8,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
+import 'package:assets_media/src/widget/colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
@@ -379,14 +380,14 @@ abstract class AssetPickerBuilderDelegate<Asset, Path> {
           decoration: !isAppleOS
               ? BoxDecoration(
                   borderRadius: BorderRadius.circular(2),
-                  color: theme.iconTheme.color!.withOpacity(0.75),
+                  color: Colours.MAIN_COLOR.withOpacity(0.75),
                 )
               : null,
           child: ScaleText(
             textDelegate.gifIndicator,
             style: TextStyle(
               color: isAppleOS
-                  ? theme.textTheme.bodyText2?.color
+                  ? Colours.MAIN_COLOR
                   : theme.primaryColor,
               fontSize: 13,
               fontWeight: FontWeight.w500,
@@ -406,7 +407,7 @@ abstract class AssetPickerBuilderDelegate<Asset, Path> {
       builder: (_, AssetPickerProvider<Asset, Path> p, __) {
         if (!p.selectedAssets.contains(asset) && p.selectedMaximumAssets) {
           return Container(
-            color: theme.colorScheme.background.withOpacity(.85),
+            color: Colours.MAIN_COLOR.withOpacity(.85),
           );
         }
         return const SizedBox.shrink();
@@ -434,7 +435,7 @@ abstract class AssetPickerBuilderDelegate<Asset, Path> {
           return w!;
         },
         child: PlatformProgressIndicator(
-          color: theme.iconTheme.color,
+          color: Colours.MAIN_COLOR,
           size: context.mediaQuery.size.width / gridCount / 3,
         ),
       ),
@@ -1459,7 +1460,7 @@ class DefaultAssetPickerBuilderDelegate
           minWidth: p.isSelectedNotEmpty ? 48 : 20,
           height: appBarItemHeight,
           padding: const EdgeInsets.symmetric(horizontal: 12),
-          color: theme.colorScheme.secondary,
+          color: Colours.MAIN_COLOR,
           disabledColor: theme.dividerColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(3),

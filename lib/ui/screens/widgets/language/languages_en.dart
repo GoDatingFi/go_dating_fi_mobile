@@ -118,4 +118,10 @@ class LanguageEn extends Languages {
 
   @override
   String get addPhotos => "Add Photos";
+
+  @override
+  List<String> get listHobby => ["90s Kid", "Seft care", "Hot Yoga", "Writing", "Meditation", "Sushi", "Sushi", "Basketball"];
+
+  @override
+  String get titleHobby => "Hobby";
 }
