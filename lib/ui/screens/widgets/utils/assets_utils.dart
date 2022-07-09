@@ -47,4 +47,8 @@ class AssetsUtils {
   static const ITEM_PHOTOS = "assets/images/item.png";
   static const ADD_PHOTOS = "assets/images/add.png";
   static const LOGO_SPLASH = "assets/logo/logo_splash.png";
+
+  static const SUPPER_LIKE = "assets/images/supper_like.png";
+  static const ONLINE = "assets/images/online.png";
+
 }
