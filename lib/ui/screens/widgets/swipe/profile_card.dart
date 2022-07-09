@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/colors.dart';
+import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/text_style.dart';
 
 import '../../../../core/model/profile_model.dart';
-
+import '../utils/assets_utils.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({Key? key, required this.profile}) : super(key: key);
@@ -10,8 +13,8 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 580,
-      width: 400,
+      height: 0.71.sh,
+      width: 0.9.sw,
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Stack(
         children: [
@@ -25,12 +28,12 @@ class ProfileCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 0,
+            bottom: 30.sm,
             child: Container(
-              height: 80,
-              width: 440,
+              height: 140.sm,
+              width: 0.9.sw,
               decoration: ShapeDecoration(
-                color: Colors.white,
+                color: Colors.transparent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -42,27 +45,48 @@ class ProfileCard extends StatelessWidget {
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 20, bottom: 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       profile.name,
-                      style: const TextStyle(
-                        fontFamily: 'Nunito',
-                        fontWeight: FontWeight.w800,
-                        fontSize: 21,
-                      ),
+                      style: TextStyles.textSize34SWhite,
+                    ),
+                    Row(
+                      children: [
+                        Image.asset(AssetsUtils.ONLINE),
+                        SizedBox(
+                          width: 5.sm,
+                        ),
+                        Text(
+                          "Japan",
+                          style: TextStyles.text14RWhite,
+                        ),
+                        SizedBox(
+                          width: 5.sm,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: Colors.transparent,
+                            border: Border.all(
+                              color: Colours.MAIN_COLOR,
+                            ),
+                          ),
+                          padding: const EdgeInsets.all(10),
+                          child: Text(profile.distance,
+                              style: const TextStyle(
+                                color: Colors.white,
+                              ),
+                              textAlign: TextAlign.center),
+                        )
+                      ],
                     ),
                     Text(
-                      profile.distance,
-                      style: const TextStyle(
-                        fontFamily: 'Nunito',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Colors.grey,
-                      ),
+                      '私は太陽の光です',
+                      style: TextStyles.textBold18RWhite,
                     ),
                   ],
                 ),

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_dating_fi_mobile/core/viewmodels/auth_provider.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/dialog/loading_screen.dart';
+import 'package:go_dating_fi_mobile/ui/screens/widgets/helper/generate.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/helper/metamask_helper.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/language/languages.dart';
 import 'package:go_dating_fi_mobile/ui/screens/widgets/utils/common.dart';
@@ -28,6 +29,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
   var _session, _uri;
 
+  var connector = WalletConnect(
+      bridge: 'https://bridge.walletconnect.org',
+      clientMeta: const PeerMeta(
+          name: 'My App',
+          description: 'An app for converting pictures to NFT',
+          url: 'https://walletconnect.org',
+          icons: [
+            'https://files.gitbook.com/v0/b/gitbook-legacy-files/o/spaces%2F-LJJeCjcLrr53DcT1Ml7%2Favatar.png?alt=media'
+          ]));
+
   @override
   void initState() {
     _userNameController = TextEditingController();
@@ -37,12 +48,20 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    MetamaskHelper().listenEvent(
-        callback: (value1) {},
-        payloadCallBack: (value2) {},
-        disconnectCallBack: (value3) {});
+    MetamaskHelper().listenEvent(connector, callback: (value1) {
+      Logger().d(value1);
+    }, payloadCallBack: (value2) {
+      Logger().d(value2);
+    }, disconnectCallBack: (value3) {
+      Logger().d(value3);
+    });
     return Scaffold(body: Builder(builder: (context) {
       return Consumer<AuthProvider>(builder: (context, auth, _) {
+        // if(_session != null){
+        //   Logger().d("${_session.accounts[0]}");
+        //   auth.getNonce(context, _session.accounts[0]);
+        //   return
+        // }
         return Stack(
           children: [
             SingleChildScrollView(
@@ -159,7 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         }),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 50.sm),
+                    margin: EdgeInsets.only(top: 30.sm),
                     child: Text(Languages.of(context)!.loginWith,
                         style: TextStyles.textBold16TextNormal),
                   ),
@@ -175,12 +194,35 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Image.asset(AssetsUtils.METAMASK_ICON),
                         ),
                         onTap: () {
-                          MetamaskHelper().loginUsingMetamask(context, _uri,
-                              callback: (value) {
-                                  setState(() {
-                                    _session = value;
-                                  });
+                          if (_session == null) {
+                            MetamaskHelper().loginUsingMetamask(
+                                context, connector, callback: (value) {
+                              setState(() {
+                                _session = value;
                               });
+                              if (_session != null &&
+                                  auth.nonceDataModel == null) {
+                                auth.getNonce(context, _session.accounts[0]);
+                              } else {}
+                            }, callbackUri: (value1) {
+                              setState(() {
+                                _uri = value1;
+                              });
+                            });
+                          } else {
+                            // TODO It will update later
+                            Logger().d(generateSessionMessage(
+                                auth.nonceDataModel!.data.toString()));
+                            // MetamaskHelper().signMessageWithMetamask(
+                            //     context,
+                            //     connector,
+                            //     _uri,
+                            //     _session,
+                            //     generateSessionMessage(auth.nonceDataModel!.data.toString()),
+                            //     callback: (value) {
+                            //   Logger().i(value);
+                            // });
+                          }
                         },
                       )
                     ],

@@ -11,53 +11,21 @@ class BaseServices {
   final Dio _dio = Dio();
   Options? _headersOption;
 
-  Future _getToken({bool? useProfileId, bool? primaryId = false}) async {
+  Future _getToken() async {
     var _token = await AuthUtils.instance.getToken();
 
-    if (useProfileId != null && useProfileId) {
-      if (primaryId != null && primaryId) {
-        var _profileID = await AuthUtils.instance.getProfileId();
-        var _primaryId = await AuthUtils.instance.getPrimaryId();
-
-        _headersOption = ConfigServices.getHeaders(
-            token: _token!, profileId: _profileID!, primaryId: _primaryId!);
-      } else {
-        var _profileID = await AuthUtils.instance.getProfileId();
-        _headersOption =
-            ConfigServices.getHeaders(token: _token!, profileId: _profileID!);
-      }
-    } else if (primaryId != null && primaryId) {
-      var _primaryId = await AuthUtils.instance.getPrimaryId();
-
-      _headersOption =
-          ConfigServices.getHeaders(token: _token!, primaryId: _primaryId!);
-    } else {
-      _headersOption = ConfigServices.getHeaders(token: _token!);
-    }
+    _headersOption = ConfigServices.getHeaders(token: _token!);
   }
 
   bool _isTokenRefresh = false;
 
   Future<dynamic> request(String url, RequestType type, BuildContext context,
-      {dynamic data,
-      bool? useToken,
-      bool? useProfileId,
-      bool? usePrimaryId}) async {
+      {dynamic data, bool? useToken}) async {
     var response;
 
     //If this route use token then fetch token
     if (useToken != null && useToken) {
-      if (useProfileId != null && useProfileId) {
-        if (usePrimaryId != null && usePrimaryId) {
-          await _getToken(useProfileId: useProfileId, primaryId: true);
-        } else {
-          await _getToken(useProfileId: useProfileId);
-        }
-      } else if (usePrimaryId != null && usePrimaryId) {
-        await _getToken(primaryId: true);
-      } else {
-        await _getToken();
-      }
+      await _getToken();
     } else {
       _headersOption = ConfigServices.getHeaders();
     }

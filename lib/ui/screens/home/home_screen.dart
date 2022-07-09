@@ -1,5 +1,6 @@
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_dating_fi_mobile/core/viewmodels/dating_provider.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/chat_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/discover/discover_screen.dart';
@@ -111,10 +112,10 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             centerTitle: false,
             backgroundColor: Colors.white,
-            titleSpacing: -40,
+            titleSpacing: 20.sm,
             title: Text(
               Languages.of(context)!.appName,
-              style: TextStyles.textSize34S,
+              style: TextStyles.textSize34SMainColor,
             ),
             elevation: 0,
           ),

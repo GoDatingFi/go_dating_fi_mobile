@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/model/profile_model.dart';
 import '../../../../main.dart';
+import '../utils/assets_utils.dart';
 import 'action_button_widget.dart';
 import 'drag_widget.dart';
 
@@ -18,140 +20,140 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
   List<Profile> draggableItems = [
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
-            'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg',
+            'https://i.pinimg.com/564x/75/2f/27/752f27fcb8089e58f641c3613a193a35.jpg',
         imageAsset2:
-            'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
+            'https://i.pinimg.com/564x/75/2f/27/752f27fcb8089e58f641c3613a193a35.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/474x/6e/48/91/6e489140de4ff27fe68284203006a710.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/474x/25/c8/29/25c8296b598f57a147d17671dfde0d35.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/474x/92/84/40/92844021a5e8ef50ab5dcb3085afe01b.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/474x/74/f7/f0/74f7f004d37f18af43dafeef23cd01c8.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/474x/9d/0a/7c/9d0a7c3a98499b78e47aca0dfb8af9db.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/474x/89/0c/be/890cbe1f5fcd55d93aef69489d662e98.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/474x/52/91/fb/5291fbc25b83ac5b800d6a13a9cf468f.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/474x/44/b3/03/44b30368f49b297799a9876735378b52.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/474x/a7/9a/08/a79a08f9877d06fd63df52ea2cb7d48d.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/236x/c6/7f/f9/c67ff9c1e5bc89cd37c4de3c8b115bd1.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/236x/50/03/4a/50034af5274e2a557c93c76276747762.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/236x/3e/8f/28/3e8f28838a47bf3b2e5865ae4d7de4bf.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/236x/2f/95/8d/2f958d55535186b8fa1fb984525b7bab.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/236x/6f/01/0a/6f010a9b53b6fff3708514b2c35dfdfc.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/236x/4e/ce/97/4ece97c535a4389f2a844495a6805526.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/236x/da/bc/9f/dabc9fb85ccb18327e49a7c220f20995.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/236x/00/f0/e2/00f0e23ecc0c4cd8b505f3cd1f427ae2.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/236x/d4/39/3c/d4393c00bd51d7e9a46f20d74486617c.jpg',
         imageAsset2:
             'https://i.pinimg.com/474x/d0/f9/f3/d0f9f3c1289d4122cd0969d32b4cb855.jpg'),
     const Profile(
         name: 'Rohini',
-        distance: '10 miles away',
+        distance: '2.5Km',
         imageAsset1:
             'https://i.pinimg.com/236x/a6/7d/65/a67d65f9d460265d2abae1c0b90c56d3.jpg',
         imageAsset2:
@@ -251,7 +253,7 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
           left: 0,
           right: 0,
           child: Padding(
-            padding: EdgeInsets.only(bottom: 80.sm),
+            padding: EdgeInsets.only(bottom: 60.sm),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -262,10 +264,17 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
                   },
                   icon: const Icon(
                     Icons.close,
-                    color: Colors.grey,
+                    color: Color(0xFFFF3737),
                   ),
+                  isSupperLike: false,
                 ),
-                SizedBox(width: 20.sm),
+                SizedBox(width: 20.w),
+                ActionButtonWidget(
+                  onPressed: () {},
+                  icon: Image.asset(AssetsUtils.SUPPER_LIKE),
+                  isSupperLike: true,
+                ),
+                SizedBox(width: 20.w),
                 ActionButtonWidget(
                   onPressed: () {
                     swipeNotifier.value = Swipe.right;
@@ -273,8 +282,9 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
                   },
                   icon: const Icon(
                     Icons.favorite,
-                    color: Colors.red,
+                    color: Color(0xFF5CE9B6),
                   ),
+                  isSupperLike: false,
                 ),
               ],
             ),

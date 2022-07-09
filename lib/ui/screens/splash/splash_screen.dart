@@ -29,15 +29,17 @@ class _SplashScreenState extends State<SplashScreen> {
         });
       } else {
         _timer.cancel();
-        var token = await AuthUtils.instance.getToken();
-        Logger().d(token);
-        if (token != null && token.isNotEmpty) {
-          NavigatorUtils.pushReplaceRemoveAll(
-              context, RouterGenerator.routeHome);
-        } else {
-          NavigatorUtils.pushReplaceRemoveAll(
-              context, RouterGenerator.routeLogin);
-        }
+        // var token = await AuthUtils.instance.getToken();
+        // Logger().d(token);
+        // if (token != null && token.isNotEmpty) {
+        //   NavigatorUtils.pushReplaceRemoveAll(
+        //       context, RouterGenerator.routeHome);
+        // } else {
+        //   NavigatorUtils.pushReplaceRemoveAll(
+        //       context, RouterGenerator.routeLogin);
+        // }
+        NavigatorUtils.pushReplaceRemoveAll(
+            context, RouterGenerator.routeHome);
       }
     });
   }
