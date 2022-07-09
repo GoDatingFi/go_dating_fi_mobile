@@ -9,7 +9,7 @@ class Api {
 
   String listImage = "$baseURL/auth/login";
 
-  String getNonce = "$baseURL/get_nonce";
+  String getNonce = "$baseURL/auth/get_nonce";
 
   String verifySignedMessage = "$baseURL/verify_signed_message";
 }

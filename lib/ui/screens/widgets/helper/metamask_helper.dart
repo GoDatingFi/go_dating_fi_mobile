@@ -4,22 +4,13 @@ import 'package:url_launcher/url_launcher_string.dart';
 import 'package:wallet_sdk_metamask/wallet_sdk_metamask.dart';
 
 class MetamaskHelper {
-  var connector = WalletConnect(
-      bridge: 'https://bridge.walletconnect.org',
-      clientMeta: const PeerMeta(
-          name: 'My App',
-          description: 'An app for converting pictures to NFT',
-          url: 'https://walletconnect.org',
-          icons: [
-            'https://files.gitbook.com/v0/b/gitbook-legacy-files/o/spaces%2F-LJJeCjcLrr53DcT1Ml7%2Favatar.png?alt=media'
-          ]));
 
-  loginUsingMetamask(
-      BuildContext context, String strUri, {Function(Object?)? callback}) async {
+  loginUsingMetamask(BuildContext context, WalletConnect connector,
+      {Function(Object?)? callback, Function(Object?)? callbackUri}) async {
     if (!connector.connected) {
       try {
         var session = await connector.createSession(onDisplayUri: (uri) async {
-          strUri = uri;
+          callbackUri!(uri);
           await launchUrlString(uri, mode: LaunchMode.externalApplication);
         });
         Logger().d(session.accounts[0]);
@@ -31,7 +22,7 @@ class MetamaskHelper {
     }
   }
 
-  switchChain(String strUri) async {
+  switchChain(connector, strUri) async {
     if (connector.connected) {
       try {
         Logger().d("add chain");
@@ -62,13 +53,33 @@ class MetamaskHelper {
     }
   }
 
-  listenEvent(
+  listenEvent(connector,
       {Function(Object?)? callback,
       Function(Object?)? payloadCallBack,
       Function(Object?)? disconnectCallBack}) {
     connector.on('connect', (session) => callback!(session));
     connector.on('session_update', (payload) => payloadCallBack!(payload));
     connector.on('disconnect', (payload) => disconnectCallBack!(payload));
+  }
+
+  signMessageWithMetamask(BuildContext context,WalletConnect connector, strUri, session, String message,
+      {Function(Object?)? callback}) async {
+    if (connector.connected) {
+      try {
+        Logger().i(message);
+
+        EthereumWalletConnectProvider provider =
+            EthereumWalletConnectProvider(connector);
+        launchUrlString(strUri, mode: LaunchMode.externalApplication);
+
+        var signature = await provider.personalSign(
+            message: message, address: session.accounts[0], password: "");
+        Logger().d(signature);
+        callback!(signature);
+      } catch (exp) {
+        Logger().e(exp);
+      }
+    }
   }
 
   getNetworkName(chainId) {
