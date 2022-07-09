@@ -109,6 +109,12 @@ class TextStyles {
       fontFamily: "Sen",
       color: Colors.white);
 
+  static TextStyle textSize34SBlack = TextStyle(
+      fontSize: Dimens.font_sp34,
+      fontWeight: FontWeight.w700,
+      fontFamily: "Sen",
+      color: Colors.black);
+
   static TextStyle textSize34MainColor = TextStyle(
       fontSize: Dimens.font_sp34,
       fontWeight: FontWeight.w700,
@@ -174,6 +180,12 @@ class TextStyles {
       fontWeight: FontWeight.w400,
       fontFamily: "SenRegular",
       color: Colors.white);
+
+  static TextStyle textBold18RBlack = TextStyle(
+      fontSize: Dimens.font_sp18,
+      fontWeight: FontWeight.w400,
+      fontFamily: "SenRegular",
+      color: Colors.black);
 
   static TextStyle textBold12RText = TextStyle(
       fontSize: Dimens.font_sp12,

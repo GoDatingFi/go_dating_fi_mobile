@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
         //       context, RouterGenerator.routeLogin);
         // }
         NavigatorUtils.pushReplaceRemoveAll(
-            context, RouterGenerator.routeHome);
+            context, RouterGenerator.routeDetailSwipeScreen);
       }
     });
   }
