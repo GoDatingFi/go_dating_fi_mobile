@@ -20,19 +20,19 @@ class BaseServices {
         var _primaryId = await AuthUtils.instance.getPrimaryId();
 
         _headersOption = ConfigServices.getHeaders(
-            token: _token, profileId: _profileID!, primaryId: _primaryId!);
+            token: _token!, profileId: _profileID!, primaryId: _primaryId!);
       } else {
         var _profileID = await AuthUtils.instance.getProfileId();
         _headersOption =
-            ConfigServices.getHeaders(token: _token, profileId: _profileID!);
+            ConfigServices.getHeaders(token: _token!, profileId: _profileID!);
       }
     } else if (primaryId != null && primaryId) {
       var _primaryId = await AuthUtils.instance.getPrimaryId();
 
       _headersOption =
-          ConfigServices.getHeaders(token: _token, primaryId: _primaryId!);
+          ConfigServices.getHeaders(token: _token!, primaryId: _primaryId!);
     } else {
-      _headersOption = ConfigServices.getHeaders(token: _token);
+      _headersOption = ConfigServices.getHeaders(token: _token!);
     }
   }
 
