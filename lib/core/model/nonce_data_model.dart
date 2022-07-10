@@ -1,5 +1,5 @@
 class NonceDataModel {
-  int? data;
+  String? data;
   bool? isArray;
   String? path;
   String? duration;
