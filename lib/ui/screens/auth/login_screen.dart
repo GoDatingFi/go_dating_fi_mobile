@@ -211,8 +211,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             });
                           } else {
                             // TODO It will update later
-                            Logger().d(generateSessionMessage(
-                                auth.nonceDataModel!.data.toString()));
                             MetamaskHelper().signMessageWithMetamask(
                                 context,
                                 connector,

@@ -73,7 +73,7 @@ class MetamaskHelper {
         launchUrlString(strUri, mode: LaunchMode.externalApplication);
 
         var signature = await provider.personalSign(
-            message: message, address: session.accounts[0], password: "");
+            message: message, address: session.accounts[0]);
         Logger().d(signature);
         callback!(signature);
       } catch (exp) {

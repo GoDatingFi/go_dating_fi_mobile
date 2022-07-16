@@ -16,6 +16,16 @@ class AssetsUtils {
   static const PHONE_ICON = "assets/icon/call.svg";
   static const PASSWORD_ICON = "assets/icon/lock.svg";
 
+  static const CHECK = "assets/icon/check.svg";
+
+  static const LOCATION = "assets/icon/location.svg";
+
+  static const UNIVERSITY = "assets/icon/university.svg";
+
+  static const SEX_ICON = "assets/icon/sex.svg";
+
+  static const HOME = "assets/icon/home.svg";
+
   static const LOGO_TRANSPARENT = "assets/icon/logo.png";
 
   static const IMAGES_WELLCOME = "assets/images/image_wellcome.png";
@@ -32,6 +42,8 @@ class AssetsUtils {
   static const CAPRICORNUS_ICON = "assets/icon/capricornus.svg";
   static const AQUARIUS_ICON = "assets/icon/aquarius.svg";
   static const PISCES = "assets/icon/pisces.svg";
+
+  static const SEAFARER = "assets/icon/seafarer.svg";
 
   static const IMAGES_LOCATION = "assets/images/location.png";
 
@@ -51,4 +63,12 @@ class AssetsUtils {
   static const SUPPER_LIKE = "assets/images/supper_like.png";
   static const ONLINE = "assets/images/online.png";
 
+  static const BACKGROUND_WALLET = "assets/images/bg_wallet.png";
+
+  static const CARD_IMAGE = "assets/images/card.png";
+  static const MATIC = "assets/images/matic.png";
+
+  static const CLOSE = "assets/images/close.png";
+
+  static const GALLERY = "assets/images/gallery.png";
 }

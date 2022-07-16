@@ -43,4 +43,9 @@ class Colours {
 
   static const Color TEXT_HIGHT = Color(0xFF4B9EFF);
 
+  static const Color COLOR_GRADIEN_1 = Color(0xFF8423D0);
+
+  static const Color COLOR_GRADIEN_2 = Color(0xFFE735EB);
+
+  static const Color BG_COLOR = Color(0xFFFAFAFB);
 }
