@@ -102,6 +102,9 @@ dependencies:
   #ranger
   syncfusion_flutter_sliders: ^20.2.38
 
+  #phone number
+  intl_phone_number_input: ^0.7.0+2
+
   story_view:
     path: ../go_dating_fi_mobile/library/story_view
   assets_media:

@@ -133,4 +133,32 @@ class LanguageVn extends Languages {
 
   @override
   String get titleHobby => "Hobby";
+
+  @override
+  String get titleCreateAccount => "Create account";
+
+  @override
+  String get desCreateAccount => "Hello, welcome back to our account";
+
+  @override
+  String get titleVerification => "Verification code";
+
+  @override
+  String get desVerification =>
+      "We have sent the code verification to your mobile number";
+
+  @override
+  String get resentOTP => "Resent OTP";
+
+  @override
+  String get titlePasswordSetup => "Password setup";
+
+  @override
+  String get desPasswordSetup => "Create a password to secure your GoDatingFi ascount ";
+
+  @override
+  String get titleCreatePassword => "Create password";
+
+  @override
+  String get titleConfirmPassword => "Confirm password";
 }
