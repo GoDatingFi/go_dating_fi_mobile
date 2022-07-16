@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -24,12 +26,27 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Bluetooth permission for connect</string>
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_{YOUR_SERVICE_TYPE}._tcp</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Take a photo for display</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is required for find friend</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is required for find friend</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Take a video for display</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Read your photos for display</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -56,22 +73,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSLocationAlwaysUsageDescription</key>
-    <string>Your location is required for find friend</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Your location is required for find friend</string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-    	<key>NSAllowsArbitraryLoads</key>
-    	<true/>
-    </dict>
-    <key>NSCameraUsageDescription</key>
- 	<string>Take a photo for display</string>
- 	<key>NSMicrophoneUsageDescription</key>
- 	<string>Take a video for display</string>
- 	<key>NSPhotoLibraryUsageDescription</key>
- 	<string>Read your photos for display</string>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
 </dict>
 </plist>

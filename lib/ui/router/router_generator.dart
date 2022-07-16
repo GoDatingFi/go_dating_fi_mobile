@@ -36,6 +36,7 @@ class RouterGenerator {
   static const routeAddPhotos = "/AddPhotos";
   static const routeHobbyScreen = "/HobbyScreen";
   static const routeDetailSwipeScreen = "/DetailSwipeScreen";
+  static const routeWallet = "/WalletScreen";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -78,6 +79,9 @@ class RouterGenerator {
         return MaterialPageRoute(builder: (_) => const HobbyScreen());
       case routeDetailSwipeScreen:
         return MaterialPageRoute(builder: (_) => const DetailSwipeScreen());
+      case routeWallet:
+        return MaterialPageRoute(builder: (_) => const WalletScreen());
+
       default:
         break;
     }

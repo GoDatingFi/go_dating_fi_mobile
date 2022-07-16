@@ -169,6 +169,13 @@ class TextStyles {
       fontFamily: "SenRegular",
       color: Colours.READ_TEXT);
 
+
+  static TextStyle textBold16TextName = TextStyle(
+      fontSize: Dimens.font_sp16,
+      fontWeight: FontWeight.w400,
+      fontFamily: "SenRegular",
+      color: Colours.TEXT_NAME);
+
   static TextStyle textBold18RTextName = TextStyle(
       fontSize: Dimens.font_sp18,
       fontWeight: FontWeight.w400,
@@ -189,6 +196,13 @@ class TextStyles {
 
   static TextStyle textBold12RText = TextStyle(
       fontSize: Dimens.font_sp12,
+      fontWeight: FontWeight.w400,
+      fontFamily: "SenRegular",
+      color: Colours.READ_TEXT);
+
+
+  static TextStyle textBold14RText = TextStyle(
+      fontSize: Dimens.font_sp14,
       fontWeight: FontWeight.w400,
       fontFamily: "SenRegular",
       color: Colours.READ_TEXT);
@@ -226,4 +240,10 @@ class TextStyles {
     fontFamily: "Sen",
     color: Colours.TEXT_SHARE_CONFIRM_TITLE,
   );
+
+  static TextStyle textSize24S = TextStyle(
+      fontSize: Dimens.font_sp24,
+      fontWeight: FontWeight.w700,
+      fontFamily: "Sen",
+      color: Colours.TEXT);
 }
