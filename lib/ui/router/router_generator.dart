@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_dating_fi_mobile/ui/screens/auth/create_account_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/auth/gender_screen.dart';
+import 'package:go_dating_fi_mobile/ui/screens/auth/password_setup_screen.dart';
+import 'package:go_dating_fi_mobile/ui/screens/auth/verification_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/chat_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/chat/socket_screen.dart';
 import 'package:go_dating_fi_mobile/ui/screens/detail/detail_swipe_screen.dart';
@@ -37,6 +40,11 @@ class RouterGenerator {
   static const routeHobbyScreen = "/HobbyScreen";
   static const routeDetailSwipeScreen = "/DetailSwipeScreen";
   static const routeWallet = "/WalletScreen";
+
+  static const routeVerification = "/VerificationScreen";
+
+  static const routeCreateAccount = "/CreateAccountScreen";
+  static const routePasswordSetupScreen = "/PasswordSetupScreen";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -81,6 +89,12 @@ class RouterGenerator {
         return MaterialPageRoute(builder: (_) => const DetailSwipeScreen());
       case routeWallet:
         return MaterialPageRoute(builder: (_) => const WalletScreen());
+      case routeCreateAccount:
+        return MaterialPageRoute(builder: (_) => const CreateAccountScreen());
+      case routeVerification:
+        return MaterialPageRoute(builder: (_) => const VerificationScreen());
+      case routePasswordSetupScreen:
+        return MaterialPageRoute(builder: (_) => const PasswordSetupScreen());
 
       default:
         break;

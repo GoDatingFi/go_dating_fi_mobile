@@ -1,6 +1,6 @@
 import 'languages.dart';
 
-class LanguageEn extends Languages {
+class LanguageJp extends Languages {
   @override
   String get appName => "GoDatingFi";
 
@@ -120,16 +120,7 @@ class LanguageEn extends Languages {
   String get addPhotos => "Add Photos";
 
   @override
-  List<String> get listHobby => [
-        "90s Kid",
-        "Seft care",
-        "Hot Yoga",
-        "Writing",
-        "Meditation",
-        "Sushi",
-        "Sushi",
-        "Basketball"
-      ];
+  List<String> get listHobby => ["90s Kid", "Seft care", "Hot Yoga", "Writing", "Meditation", "Sushi", "Sushi", "Basketball"];
 
   @override
   String get titleHobby => "Hobby";
@@ -150,6 +141,7 @@ class LanguageEn extends Languages {
   @override
   String get resentOTP => "Resent OTP";
 
+
   @override
   String get titlePasswordSetup => "Password setup";
 
@@ -161,5 +153,4 @@ class LanguageEn extends Languages {
 
   @override
   String get titleConfirmPassword => "Confirm password";
-
 }

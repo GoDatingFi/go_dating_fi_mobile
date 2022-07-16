@@ -87,4 +87,22 @@ abstract class Languages {
 
   String get titleHobby;
 
+  String get titleCreateAccount;
+
+  String get desCreateAccount;
+
+  String get titleVerification;
+
+  String get desVerification;
+
+  String get resentOTP;
+
+  String get titlePasswordSetup;
+
+  String get desPasswordSetup;
+
+  String get titleCreatePassword;
+
+  String get titleConfirmPassword;
+
 }
